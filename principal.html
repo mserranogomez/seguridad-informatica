@@ -35,7 +35,6 @@
                 <tr><td><strong>Centro</strong></td><td>IES El Grao, Valencia</td></tr>
                 <tr><td><strong>Horas totales</strong></td><td>133 horas</td></tr>
                 <tr><td><strong>Horas semanales</strong></td><td>4 h (Martes 8:00-9:50 + Viernes 12:10-14:00)</td></tr>
-                <tr><td><strong>Aula</strong></td><td>72</td></tr>
                 <tr><td><strong>Curso</strong></td><td>2026-2027</td></tr>
             </table>
         </div>
@@ -59,7 +58,7 @@
         <div class="card">
             <h2>Unidades didácticas</h2>
             <table>
-                <tr><th>UD</th><th>Título</th><th>Horas</th></tr>
+                <tr><th>UD</th><th>Título</th></tr>
                 <tbody id="udTableBody"></tbody>
             </table>
         </div>
@@ -70,12 +69,9 @@
             <h2>Contacto</h2>
             <table>
                 <tr><th>Elemento</th><th>Detalle</th></tr>
-                <tr><td><strong>Profesor/a</strong></td><td>[Nombre del profesor/a]</td></tr>
-                <tr><td><strong>Correo electrónico</strong></td><td>[nombre]@ieselgrao.com</td></tr>
-                <tr><td><strong>Despacho</strong></td><td>[Ubicación del despacho]</td></tr>
-                <tr><td><strong>Horas de tutoría</strong></td><td>[Días y horarios]</td></tr>
-                <tr><td><strong>Plataforma</strong></td><td>Aules GVA</td></tr>
-                <tr><td><strong>Comunicación</strong></td><td>Teams (@edu.gva.es)</td></tr>
+                <tr><td><strong>Profesora</strong></td><td>Mónica Serrano</td></tr>
+                <tr><td><strong>Correo electrónico</strong></td><td>m.serranogomez@edu.gva.es</td></tr>
+                <tr><td><strong>Horas de tutoría</strong></td><td>Jueves 9:50-10:45 (cita previa por correo electrónico)</td></tr>
             </table>
         </div>
 
@@ -83,8 +79,6 @@
             <h2>Recursos</h2>
             <ul>
                 <li><strong>Aules GVA:</strong> Material, cuestionarios, entregas de prácticas.</li>
-                <li><strong>Teams:</strong> Consultas y comunicación.</li>
-                <li><strong>Taller:</strong> Aula 72, con equipos con Windows y Linux.</li>
                 <li><strong>Esta web:</strong> Consulta de contenidos y materiales de cada UD.</li>
             </ul>
         </div>
@@ -98,7 +92,6 @@
     <script>
         document.getElementById('navContainer').innerHTML = getNavHTMLRoot('principal');
         document.getElementById('udTableBody').innerHTML = getUDTableHTML();
-        document.getElementById('proximamenteContainer').innerHTML = getProximamenteHTML();
     </script>
 </body>
 </html>
