@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso — Seguridad Informática</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-box">
+            <h1>Seguridad Informática</h1>
+            <p class="subtitle">0226 · 2º SMR · IES El Grao</p>
+            <form id="loginForm">
+                <input type="password" id="password" placeholder="Contraseña" autofocus>
+                <button type="submit">Entrar</button>
+                <p class="login-error" id="error">Contraseña incorrecta. Inténtalo de nuevo.</p>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var pwd = document.getElementById('password').value;
+            if (pwd === 'smr2627') {
+                sessionStorage.setItem('autenticado', 'true');
+                window.location.href = 'principal.html';
+            } else {
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        });
+    </script>
+</body>
+</html>

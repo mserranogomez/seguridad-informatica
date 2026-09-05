@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad Informática — IES El Grao</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+    <header>
+        <h1>Seguridad Informática</h1>
+        <p class="info">0226 · 2º CFGM Sistemas Microinformáticos y Redes · IES El Grao · Curso 26-27</p>
+    </header>
+
+    <nav>
+        <div class="container" id="navContainer"></div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Información del módulo</h2>
+            <table>
+                <tr><th>Elemento</th><th>Detalle</th></tr>
+                <tr><td><strong>Título</strong></td><td>Seguridad Informática</td></tr>
+                <tr><td><strong>Código</strong></td><td>0226</td></tr>
+                <tr><td><strong>Ciclo</strong></td><td>2º CFGM Sistemas Microinformáticos y Redes (SMR)</td></tr>
+                <tr><td><strong>Centro</strong></td><td>IES El Grao, Valencia</td></tr>
+                <tr><td><strong>Horas totales</strong></td><td>133 horas</td></tr>
+                <tr><td><strong>Horas semanales</strong></td><td>4 h (Martes 8:00-9:50 + Viernes 12:10-14:00)</td></tr>
+                <tr><td><strong>Aula</strong></td><td>72</td></tr>
+                <tr><td><strong>Curso</strong></td><td>2026-2027</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>¿Qué es la seguridad informática?</h2>
+            <p>La seguridad informática es el conjunto de medidas, normas y procedimientos destinados a proteger los sistemas informáticos, las redes y la información que contienen frente a amenazas, vulnerabilidades y ataques.</p>
+            <p>En un mundo cada vez más digitalizado, donde las empresas, instituciones y particulares dependen de la tecnología, la seguridad informática se ha convertido en una competencia fundamental para cualquier profesional del ámbito tecnológico.</p>
+        </div>
+
+        <div class="card">
+            <h2>¿Por qué es importante este módulo?</h2>
+            <ul>
+                <li><strong>Demanda laboral:</strong> El ciberdelito crece cada año. Las empresas necesitan profesionales que sepan proteger sus sistemas.</li>
+                <li><strong>Compromiso legal:</strong> La legislación (RGPD, LOPDGDD) obliga a las organizaciones a proteger los datos personales.</li>
+                <li><strong>Protección de la información:</strong> Los datos son un activo crítico. Su pérdida o robo puede tener consecuencias graves.</li>
+                <li><strong>Carrera profesional:</strong> La ciberseguridad es una de las áreas con mayor demanda y mejores perspectivas salariales en el sector tecnológico.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Unidades didácticas</h2>
+            <table>
+                <tr><th>UD</th><th>Título</th><th>Horas</th></tr>
+                <tbody id="udTableBody"></tbody>
+            </table>
+        </div>
+
+        <div id="proximamenteContainer"></div>
+
+        <div class="card">
+            <h2>Contacto</h2>
+            <table>
+                <tr><th>Elemento</th><th>Detalle</th></tr>
+                <tr><td><strong>Profesor/a</strong></td><td>[Nombre del profesor/a]</td></tr>
+                <tr><td><strong>Correo electrónico</strong></td><td>[nombre]@ieselgrao.com</td></tr>
+                <tr><td><strong>Despacho</strong></td><td>[Ubicación del despacho]</td></tr>
+                <tr><td><strong>Horas de tutoría</strong></td><td>[Días y horarios]</td></tr>
+                <tr><td><strong>Plataforma</strong></td><td>Aules GVA</td></tr>
+                <tr><td><strong>Comunicación</strong></td><td>Teams (@edu.gva.es)</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Recursos</h2>
+            <ul>
+                <li><strong>Aules GVA:</strong> Material, cuestionarios, entregas de prácticas.</li>
+                <li><strong>Teams:</strong> Consultas y comunicación.</li>
+                <li><strong>Taller:</strong> Aula 72, con equipos con Windows y Linux.</li>
+                <li><strong>Esta web:</strong> Consulta de contenidos y materiales de cada UD.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+    </footer>
+
+    <script>
+        document.getElementById('navContainer').innerHTML = getNavHTMLRoot('principal');
+        document.getElementById('udTableBody').innerHTML = getUDTableHTML();
+        document.getElementById('proximamenteContainer').innerHTML = getProximamenteHTML();
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD2 — Seguridad Informática</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../index.html';
+        }
+        if (!esUDActiva(2)) {
+            document.body.innerHTML = '<div style="text-align:center;padding:4rem 2rem;"><h1>Próximamente</h1><p style="margin:1rem 0;">Esta unidad aún no está disponible.</p><a href="../principal.html" style="color:var(--primary);">← Volver al inicio</a></div>';
+        }
+    </script>
+
+    <header>
+        <h1>UD2: Almacenamiento y Copias de Seguridad</h1>
+        <p class="info">0226 · 25 horas · Resultado de Aprendizaje 2</p>
+    </header>
+
+    <nav>
+        <div class="container" id="navContainer"></div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Resultado de aprendizaje</h2>
+            <p><em>Gestiona dispositivos de almacenamiento describiendo los procedimientos efectuados y aplicando técnicas para asegurar la integridad de la información.</em></p>
+        </div>
+
+        <div class="card">
+            <h2>Contenidos</h2>
+
+            <h3>1. Conceptos básicos de almacenamiento</h3>
+            <ul>
+                <li><strong>Rendimiento:</strong> IOPS, velocidad de lectura/escritura, latencia.</li>
+                <li><strong>Disponibilidad:</strong> tiempo de actividad, tolerancia a fallos.</li>
+                <li><strong>Accesibilidad:</strong> quién puede acceder a la información y desde dónde.</li>
+                <li><strong>Documentación técnica:</strong> cómo leer las especificaciones de un disco o sistema de almacenamiento.</li>
+            </ul>
+
+            <h3>2. Tipos de almacenamiento</h3>
+            <ul>
+                <li><strong>HDD (disco duro mecánico):</strong> funcionamiento, ventajas, desventajas.</li>
+                <li><strong>SSD (disco de estado sólido):</strong> funcionamiento, ventajas, desventajas.</li>
+                <li><strong>DAS (Direct Attached Storage):</strong> almacenamiento directamente conectado al equipo.</li>
+                <li><strong>NAS (Network Attached Storage):</strong> almacenamiento en red para uso compartido.</li>
+                <li><strong>SAN (Storage Area Network):</strong> red de almacenamiento de alto rendimiento.</li>
+            </ul>
+
+            <h3>3. Almacenamiento redundante: sistemas RAID</h3>
+            <ul>
+                <li><strong>RAID 0 (striping):</strong> rendimiento sin redundancia.</li>
+                <li><strong>RAID 1 (mirroring):</strong> duplicación de datos.</li>
+                <li><strong>RAID 5 (striping con paridad):</strong> equilibrio entre rendimiento y tolerancia a fallos.</li>
+                <li><strong>RAID 6 (doble paridad):</strong> tolerancia a dos fallos simultáneos.</li>
+                <li><strong>RAID 10 (striping + mirroring):</strong> rendimiento y redundancia máxima.</li>
+                <li><strong>LVM (Logical Volume Manager):</strong> gestión flexible de volúmenes en Linux.</li>
+            </ul>
+
+            <h3>4. Copias de seguridad</h3>
+            <ul>
+                <li><strong>Tipos de backup:</strong>
+                    <ul>
+                        <li><strong>Completa:</strong> copia total de los datos.</li>
+                        <li><strong>Incremental:</strong> solo los datos modificados desde la última copia.</li>
+                        <li><strong>Diferencial:</strong> los datos modificados desde la última copia completa.</li>
+                    </ul>
+                </li>
+                <li><strong>Estrategias de rotación:</strong> regla 3-2-1, GFS (Grandfather-Father-Son).</li>
+                <li><strong>Frecuencia:</strong> diaria, semanal, mensual según la criticidad.</li>
+            </ul>
+
+            <h3>5. Herramientas de backup en Linux</h3>
+            <ul>
+                <li><code>rsync</code>: sincronización eficiente de archivos.</li>
+                <li><code>tar</code>: creación de archivos comprimidos.</li>
+                <li><code>duplicity</code>: backup con cifrado y soporte remoto.</li>
+                <li><code>cron</code>: automatización de tareas periódicas.</li>
+            </ul>
+
+            <h3>6. Imágenes de sistema y recuperación</h3>
+            <ul>
+                <li><strong>Clonezilla:</strong> creación y restauración de imágenes de disco.</li>
+                <li><code>dd</code>: copia bit a bit de discos o particiones.</li>
+                <li><strong>TestDisk:</strong> recuperación de particiones perdidas.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Prácticas</h2>
+
+            <h3>Práctica 2.1: Configuración de RAID por software</h3>
+            <p>En un entorno Linux (Docker o máquina virtual), configurar un RAID 1 con dos discos virtuales y verificar que la replicación funciona correctamente.</p>
+
+            <h3>Práctica 2.2: Backup automatizado con rsync y cron</h3>
+            <p>Crear un script de backup incremental con <code>rsync</code> y programarlo con <code>cron</code> para que se ejecute automáticamente. Verificar la integridad de los datos copiados.</p>
+
+            <h3>Práctica 2.3: Recuperación de particiones</h3>
+            <p>Usar <code>TestDisk</code> para recuperar una partición eliminada accidentalmente en un disco virtual.</p>
+        </div>
+
+        <div class="card">
+            <h2>Imágenes y recursos</h2>
+            <div class="info-box">
+                <p>En esta sección se irán añadiendo imágenes, diagramas y recursos adicionales a medida que se desarrolle la unidad.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+    </footer>
+
+    <script>
+        document.getElementById('navContainer').innerHTML = getNavHTML('ud2');
+    </script>
+</body>
+</html>

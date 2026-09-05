@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD5 — Seguridad Informática</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../index.html';
+        }
+        if (!esUDActiva(5)) {
+            document.body.innerHTML = '<div style="text-align:center;padding:4rem 2rem;"><h1>Próximamente</h1><p style="margin:1rem 0;">Esta unidad aún no está disponible.</p><a href="../principal.html" style="color:var(--primary);">← Volver al inicio</a></div>';
+        }
+    </script>
+
+    <header>
+        <h1>UD5: Seguridad en Redes</h1>
+        <p class="info">0226 · 25 horas · Resultado de Aprendizaje 4</p>
+    </header>
+
+    <nav>
+        <div class="container" id="navContainer"></div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Resultado de aprendizaje</h2>
+            <p><em>Asegura la privacidad de la información transmitida en redes informáticas describiendo vulnerabilidades e instalando software específico.</em></p>
+            <p style="font-size:0.9rem; color:var(--text-light);">Esta UD cubre los criterios de evaluación a), d), e) y h) del RA4, dedicados a seguridad en redes.</p>
+        </div>
+
+        <div class="card">
+            <h2>Contenidos</h2>
+
+            <h3>1. Inventario y control de servicios de red</h3>
+            <ul>
+                <li><strong>¿Por qué inventariar?</strong> no se puede proteger lo que no se conoce.</li>
+                <li><strong>Herramientas de escaneo:</strong> nmap para descubrir hosts y servicios activos.</li>
+                <li><strong>Puertos y servicios:</strong> puertos abiertos, cerrados y filtrados.</li>
+                <li><strong>Documentación:</strong> mantenimiento de un inventario actualizado de la red.</li>
+            </ul>
+
+            <h3>2. Monitorización de redes cableadas</h3>
+            <ul>
+                <li><strong>¿Qué es la monitorización?</strong> observación del tráfico de red para detectar anomalías.</li>
+                <li><strong>Herramientas:</strong> Wireshark (análisis de paquetes), tcpdump.</li>
+                <li><strong>Amenazas:</strong> ataques man-in-the-middle, sniffing, poisoning ARP.</li>
+                <li><strong>Medidas de protección:</strong> segmentación de red, cifrado, port security.</li>
+            </ul>
+
+            <h3>3. Seguridad en redes inalámbricas</h3>
+            <ul>
+                <li><strong>Vulnerabilidades del WiFi:</strong> WEP (obsoleto), WPA, WPA2, WPA3.</li>
+                <li><strong>Protocolos de cifrado:</strong> TKIP vs. AES-CCMP.</li>
+                <li><strong>Autenticación:</strong> PSK (pre-shared key) vs. Enterprise (RADIUS).</li>
+                <li><strong>Seguridad de puertos:</strong> MAC filtering, 802.1X.</li>
+                <li><strong>Medidas adicionales:</strong> ocultar SSID (y por qué no es suficiente), segmentación VLAN.</li>
+            </ul>
+
+            <h3>4. Cortafuegos (firewall)</h3>
+            <ul>
+                <li><strong>¿Qué es un cortafuegos?</strong> barrera entre redes que filtra el tráfico según reglas.</li>
+                <li><strong>Tipos:</strong>
+                    <ul>
+                        <li><strong>Filtrado de paquetes:</strong> reglas basadas en IP, puerto y protocolo.</li>
+                        <li><strong>Stateful:</strong> conoce el estado de las conexiones.</li>
+                        <li><strong>Proxy:</strong> actúa como intermediario.</li>
+                        <li><strong>Next-generation:</strong> inspección profunda de paquetes.</li>
+                    </ul>
+                </li>
+                <li><strong>iptables / nftables:</strong> cortafuegos nativo de Linux.</li>
+                <li><strong>UFW (Uncomplicated Firewall):</strong> interfaz sencilla para iptables.</li>
+                <li><strong>Windows Firewall:</strong> configuración básica.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Prácticas</h2>
+
+            <h3>Práctica 5.1: Escaneo de red con nmap</h3>
+            <p>Realizar un escaneo de la red local para descubrir hosts activos, puertos abiertos y servicios ejecutándose.</p>
+            <pre><code># Escaneo básico de la red
+nmap -sn 192.168.1.0/24
+
+# Escaneo de puertos y servicios de un host
+nmap -sV 192.168.1.100
+
+# Escaneo agresivo (con detección de SO)
+nmap -A 192.168.1.100</code></pre>
+
+            <h3>Práctica 5.2: Análisis de tráfico con Wireshark</h3>
+            <p>Capturar tráfico de red con Wireshark y analizar los paquetes para identificar protocolos, direcciones IP y posibles anomalías.</p>
+
+            <h3>Práctica 5.3: Configuración de UFW</h3>
+            <p>Configurar UFW en Linux para permitir o denegar tráfico según un conjunto de reglas. Verificar que el cortafuegos funciona correctamente.</p>
+            <pre><code># Activar UFW
+sudo ufw enable
+
+# Permitir SSH
+sudo ufw allow ssh
+
+# Permitir tráfico web
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+
+# Ver reglas
+sudo ufw status verbose
+
+# Denegar todo lo no permitido
+sudo ufw default deny incoming
+sudo ufw default allow outgoing</code></pre>
+
+            <h3>Práctica 5.4: Configuración de iptables</h3>
+            <p>Crear reglas de cortafuegos con iptables para filtrar tráfico por dirección IP, puerto y protocolo.</p>
+            <pre><code># Ver reglas actuales
+sudo iptables -L -n
+
+# Bloquear una IP
+sudo iptables -A INPUT -s 192.168.1.100 -j DROP
+
+# Permitir tráfico HTTP
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+# Guardar reglas
+sudo iptables-save > /etc/iptables/rules.v4</code></pre>
+        </div>
+
+        <div class="card">
+            <h2>Imágenes y recursos</h2>
+            <div class="info-box">
+                <p>En esta sección se irán añadiendo imágenes, diagramas y recursos adicionales a medida que se desarrolle la unidad.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+    </footer>
+
+    <script>
+        document.getElementById('navContainer').innerHTML = getNavHTML('ud5');
+    </script>
+</body>
+</html>
