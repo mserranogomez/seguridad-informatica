@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera Sesión — Seguridad Informática</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/config.js"></script>
+    <style>
+        .question {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+        }
+        .question p {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        .options label {
+            display: block;
+            padding: 0.4rem 0;
+            cursor: pointer;
+        }
+        .options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .open-answer {
+            width: 100%;
+            min-height: 80px;
+            padding: 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 0.9rem;
+            resize: vertical;
+            margin-top: 0.5rem;
+        }
+        .section-title {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.6rem 1rem;
+            border-radius: var(--radius);
+            margin: 2rem 0 1rem;
+            font-size: 1.1rem;
+        }
+        @media print {
+            .no-print { display: none; }
+            .question { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../index.html';
+        }
+    </script>
+
+    <header>
+        <h1>Primera Sesión: Cuestionario de Conocimientos Previos</h1>
+        <p class="info">0226 · Seguridad Informática · 11 de septiembre de 2026</p>
+    </header>
+
+    <nav>
+        <div class="container" id="navContainer"></div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Instrucciones</h2>
+            <p>Este cuestionario tiene como objetivo conocer tu nivel de conocimientos previos sobre los contenidos que necesitaremos en este módulo. No se evalúa, solo nos sirve para adaptar el ritmo de trabajo al grupo.</p>
+            <p>Contesta con sinceridad. Si no sabes la respuesta o no recuerdas algo, no pasa nada: esnormal. ¡Es mejor saber de qué nivel partimos!</p>
+        </div>
+
+        <div class="card">
+            <h2>Sistemas operativos</h2>
+
+            <div class="question">
+                <p>1. ¿Cuál de estas opciones es un sistema operativo?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> Microsoft Word</label>
+                    <label><input type="radio" name="q1" value="b"> Linux</label>
+                    <label><input type="radio" name="q1" value="c"> Google Chrome</label>
+                    <label><input type="radio" name="q1" value="d"> Photoshop</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. ¿Qué extensión tienen los ejecutables en Windows?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> .exe</label>
+                    <label><input type="radio" name="q2" value="b"> .txt</label>
+                    <label><input type="radio" name="q2" value="c"> .doc</label>
+                    <label><input type="radio" name="q2" value="d"> .pdf</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. ¿Qué comando se usa para ver el contenido de un directorio en la terminal de Linux?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> dir</label>
+                    <label><input type="radio" name="q3" value="b"> ls</label>
+                    <label><input type="radio" name="q3" value="c"> cd</label>
+                    <label><input type="radio" name="q3" value="d"> cat</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. ¿Qué es un sistema de archivos?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> Un programa para crear documentos</label>
+                    <label><input type="radio" name="q4" value="b"> La forma en que el SO organiza y almacena archivos en el disco</label>
+                    <label><input type="radio" name="q4" value="c"> Un tipo de virus informático</label>
+                    <label><input type="radio" name="q4" value="d"> Un dispositivo de almacenamiento externo</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Redes</h2>
+
+            <div class="question">
+                <p>5. ¿Qué significa IP?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> Internet Protocol</label>
+                    <label><input type="radio" name="q5" value="b"> Internal Processing</label>
+                    <label><input type="radio" name="q5" value="c"> Information Provider</label>
+                    <label><input type="radio" name="q5" value="d"> Input Power</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>6. ¿Cuál de estos es una dirección IP válida?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> 192.168.1.1</label>
+                    <label><input type="radio" name="q6" value="b"> 999.999.999.999</label>
+                    <label><input type="radio" name="q6" value="c"> abcdefgh</label>
+                    <label><input type="radio" name="q6" value="d"> 256.1.1.1</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>7. ¿Qué protocolo se usa para navegar por páginas web?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> FTP</label>
+                    <label><input type="radio" name="q7" value="b"> HTTP/HTTPS</label>
+                    <label><input type="radio" name="q7" value="c"> SMTP</label>
+                    <label><input type="radio" name="q7" value="d"> SSH</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>8. ¿Qué es un cortafuegos (firewall)?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> Un tipo de virus</label>
+                    <label><input type="radio" name="q8" value="b"> Un sistema que filtra el tráfico de red para permitir o denegar conexiones</label>
+                    <label><input type="radio" name="q8" value="c"> Un navegador web</label>
+                    <label><input type="radio" name="q8" value="d"> Un programa de edición de fotos</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Seguridad</h2>
+
+            <div class="question">
+                <p>9. ¿Qué es una contraseña segura?</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> Tu fecha de nacimiento</label>
+                    <label><input type="radio" name="q9" value="b"> "123456"</label>
+                    <label><input type="radio" name="q9" value="c"> Una combinación de letras, números y símbolos, con longitud adecuada</label>
+                    <label><input type="radio" name="q9" value="d"> Tu nombre</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>10. ¿Qué es el phishing?</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> Un tipo de cable de red</label>
+                    <label><input type="radio" name="q10" value="b"> Una técnica para robar información haciéndose pasar por una entidad fiable</label>
+                    <label><input type="radio" name="q10" value="c"> Un programa antivirus</label>
+                    <label><input type="radio" name="q10" value="d"> Un sistema de respaldo de datos</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>11. ¿Qué es un virus informático?</p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="a"> Un hardware defectuoso</label>
+                    <label><input type="radio" name="q11" value="b"> Un programa malicioso que se replica y afecta al funcionamiento del equipo</label>
+                    <label><input type="radio" name="q11" value="c"> Un tipo de archivo de imagen</label>
+                    <label><input type="radio" name="q11" value="d"> Un cable de conexión</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>12. ¿Qué significa que un archivo está "cifrado"?</p>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="a"> Que está comprimido para ocupar menos</label>
+                    <label><input type="radio" name="q12" value="b"> Que su contenido ha sido transformado para que solo pueda ser leído con la clave correcta</label>
+                    <label><input type="radio" name="q12" value="c"> Que está en la papelera de reciclaje</label>
+                    <label><input type="radio" name="q12" value="d"> Que es un archivo de texto plano</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Cuestiones abiertas</h2>
+
+            <div class="question">
+                <p>13. ¿Has trabajado anteriormente con la terminal / línea de comandos? Si es así, ¿con qué sistema operativo?</p>
+                <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div class="question">
+                <p>14. ¿Qué experiencia previa tienes con conceptos de seguridad informática? (ciberseguridad, redes, protección de datos...)</p>
+                <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+
+            <div class="question">
+                <p>15. ¿Qué esperas aprender en este módulo?</p>
+                <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
+            </div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--accent);">
+            <p><strong>Nota:</strong> Este cuestionario no tiene nota. Sirve para que la profesora conozca el nivel del grupo y pueda adaptar la docencia. ¡Gracias por tu honestidad!</p>
+        </div>
+
+    </div>
+
+    <footer>
+        IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+    </footer>
+
+    <script>
+        document.getElementById('navContainer').innerHTML = getNavHTMLRoot('primera');
+    </script>
+</body>
+</html>
