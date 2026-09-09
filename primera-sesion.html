@@ -10,225 +10,235 @@
 <body>
     <script>
         if (!sessionStorage.getItem('autenticado')) {
-            window.location.href = '../index.html';
+            window.location.href = 'index.html';
         }
     </script>
 
-    <header>
-        <h1>Cuestionario de Conocimientos Previos</h1>
-        <p class="info">0226 · Seguridad Informática · Primera sesión</p>
-    </header>
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
 
-    <nav>
-        <div class="container" id="navContainer"></div>
-    </nav>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Seguridad Informática</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
 
-    <div class="container">
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Cuestionario de Conocimientos Previos</h1>
+                <p class="info">0226 · Seguridad Informática · Primera sesión</p>
+            </header>
 
-        <div class="card">
-            <h2>Instrucciones</h2>
-            <p>Este cuestionario tiene como objetivo conocer tu nivel de conocimientos previos sobre los contenidos que necesitaremos en este módulo. <strong>No se evalúa</strong>, solo nos sirve para adaptar el ritmo de trabajo al grupo.</p>
-            <p>Contesta con sinceridad. Si no sabes la respuesta o no recuerdas algo, no pasa nada. ¡Es mejor saber de qué nivel partimos!</p>
-        </div>
+            <div class="container">
 
-        <div class="card">
-            <h2>Sistemas operativos y virtualización</h2>
-
-            <div class="question">
-                <p>1. Señala cuál de estos programas es un sistema operativo:</p>
-                <div class="options">
-                    <label><input type="radio" name="q1" value="a"> Visual Studio Code</label>
-                    <label><input type="radio" name="q1" value="b"> Ubuntu</label>
-                    <label><input type="radio" name="q1" value="c"> Firefox</label>
-                    <label><input type="radio" name="q1" value="d"> Excel</label>
+                <div class="card">
+                    <h2>Instrucciones</h2>
+                    <p>Este cuestionario tiene como objetivo conocer tu nivel de conocimientos previos sobre los contenidos que necesitaremos en este módulo. <strong>No se evalúa</strong>, solo nos sirve para adaptar el ritmo de trabajo al grupo.</p>
+                    <p>Contesta con sinceridad. Si no sabes la respuesta o no recuerdas algo, no pasa nada. ¡Es mejor saber de qué nivel partimos!</p>
                 </div>
-            </div>
 
-            <div class="question">
-                <p>2. En Linux, ¿qué comando se utiliza para desplazarse entre directorios?</p>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="a"> ls</label>
-                    <label><input type="radio" name="q2" value="b"> mv</label>
-                    <label><input type="radio" name="q2" value="c"> cd</label>
-                    <label><input type="radio" name="q2" value="d"> rm</label>
+                <div class="card">
+                    <h2>Sistemas operativos y virtualización</h2>
+
+                    <div class="question">
+                        <p>1. Señala cuál de estos programas es un sistema operativo:</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> Visual Studio Code</label>
+                            <label><input type="radio" name="q1" value="b"> Ubuntu</label>
+                            <label><input type="radio" name="q1" value="c"> Firefox</label>
+                            <label><input type="radio" name="q1" value="d"> Excel</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>2. En Linux, ¿qué comando se utiliza para desplazarse entre directorios?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> ls</label>
+                            <label><input type="radio" name="q2" value="b"> mv</label>
+                            <label><input type="radio" name="q2" value="c"> cd</label>
+                            <label><input type="radio" name="q2" value="d"> rm</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>3. ¿Qué es una máquina virtual?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> Un ordenador portátil de pequeño tamaño</label>
+                            <label><input type="radio" name="q3" value="b"> Un programa que emula un ordenador completo dentro de otro</label>
+                            <label><input type="radio" name="q3" value="c"> Un dispositivo de almacenamiento externo</label>
+                            <label><input type="radio" name="q3" value="d"> Una red inalámbrica</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>4. ¿Qué es Docker?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> Un navegador web alternativo</label>
+                            <label><input type="radio" name="q4" value="b"> Un gestor de contenedores que empaqueta aplicaciones con su entorno</label>
+                            <label><input type="radio" name="q4" value="c"> Un programa de edición de vídeo</label>
+                            <label><input type="radio" name="q4" value="d"> Un tipo de cable de red</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>5. ¿Cuál es la diferencia principal entre una máquina virtual y un contenedor?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> No hay diferencia, son lo mismo</label>
+                            <label><input type="radio" name="q5" value="b"> La MV emula hardware completo; el contenedor comparte el SO del anfitrión</label>
+                            <label><input type="radio" name="q5" value="c"> El contenedor es más lento que la MV</label>
+                            <label><input type="radio" name="q5" value="d"> La MV no necesita recursos del ordenador</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="question">
-                <p>3. ¿Qué es una máquina virtual?</p>
-                <div class="options">
-                    <label><input type="radio" name="q3" value="a"> Un ordenador portátil de pequeño tamaño</label>
-                    <label><input type="radio" name="q3" value="b"> Un programa que emula un ordenador completo dentro de otro</label>
-                    <label><input type="radio" name="q3" value="c"> Un dispositivo de almacenamiento externo</label>
-                    <label><input type="radio" name="q3" value="d"> Una red inalámbrica</label>
+                <div class="card">
+                    <h2>Redes</h2>
+
+                    <div class="question">
+                        <p>6. ¿Qué capa del modelo OSI se encarga del enrutamiento de paquetes entre redes distintas?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> Capa 2 (Enlace de datos)</label>
+                            <label><input type="radio" name="q6" value="b"> Capa 3 (Red)</label>
+                            <label><input type="radio" name="q6" value="c"> Capa 4 (Transporte)</label>
+                            <label><input type="radio" name="q6" value="d"> Capa 7 (Aplicación)</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>7. ¿En qué capa del modelo OSI opera un switch de red?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> Capa 1 (Física)</label>
+                            <label><input type="radio" name="q7" value="b"> Capa 2 (Enlace de datos)</label>
+                            <label><input type="radio" name="q7" value="c"> Capa 3 (Red)</label>
+                            <label><input type="radio" name="q7" value="d"> Capa 4 (Transporte)</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>8. ¿Qué protocolo utiliza un router para decidir por dónde enviar cada paquete?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> TCP</label>
+                            <label><input type="radio" name="q8" value="b"> OSPF</label>
+                            <label><input type="radio" name="q8" value="c"> HTTP</label>
+                            <label><input type="radio" name="q8" value="d"> FTP</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>9. ¿Qué dispositivo de red traduce direcciones IP a direcciones MAC?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> DNS</label>
+                            <label><input type="radio" name="q9" value="b"> DHCP</label>
+                            <label><input type="radio" name="q9" value="c"> ARP</label>
+                            <label><input type="radio" name="q9" value="d"> NAT</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>10. Una dirección IPv4 está formada por:</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> 6 bloques de 4 dígitos hexadecimales</label>
+                            <label><input type="radio" name="q10" value="b"> 4 octetos separados por puntos, cada uno entre 0 y 255</label>
+                            <label><input type="radio" name="q10" value="c"> 8 octetos separados por dos puntos</label>
+                            <label><input type="radio" name="q10" value="d"> Un número entero de 64 bits</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="question">
-                <p>4. ¿Qué es Docker?</p>
-                <div class="options">
-                    <label><input type="radio" name="q4" value="a"> Un navegador web alternativo</label>
-                    <label><input type="radio" name="q4" value="b"> Un gestor de contenedores que empaqueta aplicaciones con su entorno</label>
-                    <label><input type="radio" name="q4" value="c"> Un programa de edición de vídeo</label>
-                    <label><input type="radio" name="q4" value="d"> Un tipo de cable de red</label>
+                <div class="card">
+                    <h2>Seguridad</h2>
+
+                    <div class="question">
+                        <p>11. ¿Cuál de estas contraseñas es más segura?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q11" value="a"> Maria2026!</label>
+                            <label><input type="radio" name="q11" value="b"> Clave123</label>
+                            <label><input type="radio" name="q11" value="c"> p4$$w0rD_82x</label>
+                            <label><input type="radio" name="q11" value="d"> Contrasena</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>12. Si recibes un correo de tu banco pidiéndote que hagas clic en un enlace para "verificar tu cuenta", lo más probable es que se trate de:</p>
+                        <div class="options">
+                            <label><input type="radio" name="q12" value="a"> Una promoción legítima del banco</label>
+                            <label><input type="radio" name="q12" value="b"> Un ataque de phishing</label>
+                            <label><input type="radio" name="q12" value="c"> Un error del sistema de correo</label>
+                            <label><input type="radio" name="q12" value="d"> Una actualización de seguridad</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>13. ¿Qué significa "cifrar" un archivo?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q13" value="a"> Comprimirlo para que ocupe menos espacio</label>
+                            <label><input type="radio" name="q13" value="b"> Convertir su contenido en código ilegible sin la clave adecuada</label>
+                            <label><input type="radio" name="q13" value="c"> Moverlo a una carpeta oculta</label>
+                            <label><input type="radio" name="q13" value="d"> Eliminar sus metadatos</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>14. Un ataque de fuerza bruta consiste en:</p>
+                        <div class="options">
+                            <label><input type="radio" name="q14" value="a"> Engañar al usuario para que revele su contraseña</label>
+                            <label><input type="radio" name="q14" value="b"> Probar sistemáticamente combinaciones hasta encontrar la correcta</label>
+                            <label><input type="radio" name="q14" value="c"> Interceptar el tráfico de red entre dos equipos</label>
+                            <label><input type="radio" name="q14" value="d"> Inyectar código malicioso en una página web</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>15. ¿Qué hace un antivirus?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q15" value="a"> Acelera la velocidad del procesador</label>
+                            <label><input type="radio" name="q15" value="b"> Detecta y elimina software malicioso del sistema</label>
+                            <label><input type="radio" name="q15" value="c"> Comprime los archivos para ahorrar espacio</label>
+                            <label><input type="radio" name="q15" value="d"> Gestiona las actualizaciones del sistema operativo</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="question">
-                <p>5. ¿Cuál es la diferencia principal entre una máquina virtual y un contenedor?</p>
-                <div class="options">
-                    <label><input type="radio" name="q5" value="a"> No hay diferencia, son lo mismo</label>
-                    <label><input type="radio" name="q5" value="b"> La MV emula hardware completo; el contenedor comparte el SO del anfitrión</label>
-                    <label><input type="radio" name="q5" value="c"> El contenedor es más lento que la MV</label>
-                    <label><input type="radio" name="q5" value="d"> La MV no necesita recursos del ordenador</label>
+                <div class="card">
+                    <h2>Cuestiones abiertas</h2>
+
+                    <div class="question">
+                        <p>16. ¿Has utilizado alguna vez la línea de comandos o terminal? ¿En qué sistema operativo?</p>
+                        <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <div class="question">
+                        <p>17. ¿Has trabajado con máquinas virtuales o contenedores? Si es así, ¿cuáles?</p>
+                        <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <div class="question">
+                        <p>18. ¿Qué experiencia previa tienes con seguridad informática o redes?</p>
+                        <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <div class="question">
+                        <p>19. ¿Qué esperas aprender en este módulo?</p>
+                        <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <h2>Redes</h2>
-
-            <div class="question">
-                <p>6. ¿Qué capa del modelo OSI se encarga del enrutamiento de paquetes entre redes distintas?</p>
-                <div class="options">
-                    <label><input type="radio" name="q6" value="a"> Capa 2 (Enlace de datos)</label>
-                    <label><input type="radio" name="q6" value="b"> Capa 3 (Red)</label>
-                    <label><input type="radio" name="q6" value="c"> Capa 4 (Transporte)</label>
-                    <label><input type="radio" name="q6" value="d"> Capa 7 (Aplicación)</label>
+                <div class="card" style="border-left: 4px solid var(--accent);">
+                    <p><strong>Nota:</strong> Este cuestionario no tiene nota. Sirve para que la profesora conozca el nivel del grupo y adapte la docencia. ¡Gracias por tu honestidad!</p>
                 </div>
+
             </div>
 
-            <div class="question">
-                <p>7. ¿En qué capa del modelo OSI opera un switch de red?</p>
-                <div class="options">
-                    <label><input type="radio" name="q7" value="a"> Capa 1 (Física)</label>
-                    <label><input type="radio" name="q7" value="b"> Capa 2 (Enlace de datos)</label>
-                    <label><input type="radio" name="q7" value="c"> Capa 3 (Red)</label>
-                    <label><input type="radio" name="q7" value="d"> Capa 4 (Transporte)</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>8. ¿Qué protocolo utiliza un router para decidir por dónde enviar cada paquete?</p>
-                <div class="options">
-                    <label><input type="radio" name="q8" value="a"> TCP</label>
-                    <label><input type="radio" name="q8" value="b"> OSPF</label>
-                    <label><input type="radio" name="q8" value="c"> HTTP</label>
-                    <label><input type="radio" name="q8" value="d"> FTP</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>9. ¿Qué dispositivo de red traduce direcciones IP a direcciones MAC?</p>
-                <div class="options">
-                    <label><input type="radio" name="q9" value="a"> DNS</label>
-                    <label><input type="radio" name="q9" value="b"> DHCP</label>
-                    <label><input type="radio" name="q9" value="c"> ARP</label>
-                    <label><input type="radio" name="q9" value="d"> NAT</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>10. Una dirección IPv4 está formada por:</p>
-                <div class="options">
-                    <label><input type="radio" name="q10" value="a"> 6 bloques de 4 dígitos hexadecimales</label>
-                    <label><input type="radio" name="q10" value="b"> 4 octetos separados por puntos, cada uno entre 0 y 255</label>
-                    <label><input type="radio" name="q10" value="c"> 8 octetos separados por dos puntos</label>
-                    <label><input type="radio" name="q10" value="d"> Un número entero de 64 bits</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Seguridad</h2>
-
-            <div class="question">
-                <p>11. ¿Cuál de estas contraseñas es más segura?</p>
-                <div class="options">
-                    <label><input type="radio" name="q11" value="a"> Maria2026!</label>
-                    <label><input type="radio" name="q11" value="b"> Clave123</label>
-                    <label><input type="radio" name="q11" value="c"> p4$$w0rD_82x</label>
-                    <label><input type="radio" name="q11" value="d"> Contrasena</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>12. Si recibes un correo de tu banco pidiéndote que hagas clic en un enlace para "verificar tu cuenta", lo más probable es que se trate de:</p>
-                <div class="options">
-                    <label><input type="radio" name="q12" value="a"> Una promoción legítima del banco</label>
-                    <label><input type="radio" name="q12" value="b"> Un ataque de phishing</label>
-                    <label><input type="radio" name="q12" value="c"> Un error del sistema de correo</label>
-                    <label><input type="radio" name="q12" value="d"> Una actualización de seguridad</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>13. ¿Qué significa "cifrar" un archivo?</p>
-                <div class="options">
-                    <label><input type="radio" name="q13" value="a"> Comprimirlo para que ocupe menos espacio</label>
-                    <label><input type="radio" name="q13" value="b"> Convertir su contenido en código ilegible sin la clave adecuada</label>
-                    <label><input type="radio" name="q13" value="c"> Moverlo a una carpeta oculta</label>
-                    <label><input type="radio" name="q13" value="d"> Eliminar sus metadatos</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>14. Un ataque de fuerza bruta consiste en:</p>
-                <div class="options">
-                    <label><input type="radio" name="q14" value="a"> Engañar al usuario para que revele su contraseña</label>
-                    <label><input type="radio" name="q14" value="b"> Probar sistemáticamente combinaciones hasta encontrar la correcta</label>
-                    <label><input type="radio" name="q14" value="c"> Interceptar el tráfico de red entre dos equipos</label>
-                    <label><input type="radio" name="q14" value="d"> Inyectar código malicioso en una página web</label>
-                </div>
-            </div>
-
-            <div class="question">
-                <p>15. ¿Qué hace un antivirus?</p>
-                <div class="options">
-                    <label><input type="radio" name="q15" value="a"> Acelera la velocidad del procesador</label>
-                    <label><input type="radio" name="q15" value="b"> Detecta y elimina software malicioso del sistema</label>
-                    <label><input type="radio" name="q15" value="c"> Comprime los archivos para ahorrar espacio</label>
-                    <label><input type="radio" name="q15" value="d"> Gestiona las actualizaciones del sistema operativo</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Cuestiones abiertas</h2>
-
-            <div class="question">
-                <p>16. ¿Has utilizado alguna vez la línea de comandos o terminal? ¿En qué sistema operativo?</p>
-                <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
-            </div>
-
-            <div class="question">
-                <p>17. ¿Has trabajado con máquinas virtuales o contenedores? Si es así, ¿cuáles?</p>
-                <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
-            </div>
-
-            <div class="question">
-                <p>18. ¿Qué experiencia previa tienes con seguridad informática o redes?</p>
-                <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
-            </div>
-
-            <div class="question">
-                <p>19. ¿Qué esperas aprender en este módulo?</p>
-                <textarea class="open-answer" placeholder="Escribe tu respuesta aquí..."></textarea>
-            </div>
-        </div>
-
-        <div class="card" style="border-left: 4px solid var(--accent);">
-            <p><strong>Nota:</strong> Este cuestionario no tiene nota. Sirve para que la profesora conozca el nivel del grupo y adapte la docencia. ¡Gracias por tu honestidad!</p>
-        </div>
-
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
     </div>
 
-    <footer>
-        IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
-    </footer>
-
     <script>
-        document.getElementById('navContainer').innerHTML = getNavHTMLRoot('primera');
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTMLRoot('primera');
     </script>
 </body>
 </html>

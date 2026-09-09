@@ -14,90 +14,104 @@
         }
     </script>
 
-    <header>
-        <h1>Seguridad Informática</h1>
-        <p class="info">0226 · 2º CFGM Sistemas Microinformáticos y Redes · IES El Grao · Curso 26-27</p>
-    </header>
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
 
-    <nav>
-        <div class="container" id="navContainer"></div>
-    </nav>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Seguridad Informática</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
 
-    <div class="container">
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Seguridad Informática</h1>
+                <p class="info">0226 · 2º CFGM Sistemas Microinformáticos y Redes · IES El Grao · Curso 26-27</p>
+            </header>
 
-        <div class="card">
-            <h2>Información del módulo</h2>
-            <table>
-                <tr><th>Elemento</th><th>Detalle</th></tr>
-                <tr><td><strong>Título</strong></td><td>Seguridad Informática</td></tr>
-                <tr><td><strong>Código</strong></td><td>0226</td></tr>
-                <tr><td><strong>Ciclo</strong></td><td>2º CFGM Sistemas Microinformáticos y Redes (SMR)</td></tr>
-                <tr><td><strong>Centro</strong></td><td>IES El Grao, Valencia</td></tr>
-                <tr><td><strong>Horas totales</strong></td><td>133 horas</td></tr>
-                <tr><td><strong>Horas semanales</strong></td><td>4 h (Martes 8:00-9:50 + Viernes 12:10-14:00)</td></tr>
-                <tr><td><strong>Curso</strong></td><td>2026-2027</td></tr>
-            </table>
-        </div>
+            <div class="container">
 
-        <div class="card">
-            <h2>¿Qué es la seguridad informática?</h2>
-            <p>La seguridad informática es el conjunto de medidas, normas y procedimientos destinados a proteger los sistemas informáticos, las redes y la información que contienen frente a amenazas, vulnerabilidades y ataques.</p>
-            <p>En un mundo cada vez más digitalizado, donde las empresas, instituciones y particulares dependen de la tecnología, la seguridad informática se ha convertido en una competencia fundamental para cualquier profesional del ámbito tecnológico.</p>
-        </div>
+                <div class="card">
+                    <h2>Información del módulo</h2>
+                    <table>
+                        <tr><th>Elemento</th><th>Detalle</th></tr>
+                        <tr><td><strong>Título</strong></td><td>Seguridad Informática</td></tr>
+                        <tr><td><strong>Código</strong></td><td>0226</td></tr>
+                        <tr><td><strong>Ciclo</strong></td><td>2º CFGM Sistemas Microinformáticos y Redes (SMR)</td></tr>
+                        <tr><td><strong>Centro</strong></td><td>IES El Grao, Valencia</td></tr>
+                        <tr><td><strong>Horas totales</strong></td><td>133 horas</td></tr>
+                        <tr><td><strong>Horas semanales</strong></td><td>4 h (Martes 8:00-9:50 + Viernes 12:10-14:00)</td></tr>
+                        <tr><td><strong>Curso</strong></td><td>2026-2027</td></tr>
+                    </table>
 
-        <div class="card">
-            <h2>¿Por qué es importante este módulo?</h2>
-            <ul>
-                <li><strong>Demanda laboral:</strong> El ciberdelito crece cada año. Las empresas necesitan profesionales que sepan proteger sus sistemas.</li>
-                <li><strong>Compromiso legal:</strong> La legislación (RGPD, LOPDGDD) obliga a las organizaciones a proteger los datos personales.</li>
-                <li><strong>Protección de la información:</strong> Los datos son un activo crítico. Su pérdida o robo puede tener consecuencias graves.</li>
-                <li><strong>Carrera profesional:</strong> La ciberseguridad es una de las áreas con mayor demanda y mejores perspectivas salariales en el sector tecnológico.</li>
-            </ul>
-        </div>
+                    <h3>¿Qué es la seguridad informática?</h3>
+                    <p>La seguridad informática es el conjunto de medidas, normas y procedimientos destinados a proteger los sistemas informáticos, las redes y la información que contienen frente a amenazas, vulnerabilidades y ataques.</p>
+                    <p>En un mundo cada vez más digitalizado, donde las empresas, instituciones y particulares dependen de la tecnología, la seguridad informática se ha convertido en una competencia fundamental para cualquier profesional del ámbito tecnológico.</p>
 
-        <div class="card">
-            <h2>Unidades de Programación (UP)</h2>
-            <table>
-                <tr><th>UP</th><th>Título</th></tr>
-                <tbody id="udTableBody"></tbody>
-            </table>
-        </div>
+                    <h3>¿Por qué es importante este módulo?</h3>
+                    <ul>
+                        <li><strong>Demanda laboral:</strong> El ciberdelito crece cada año. Las empresas necesitan profesionales que sepan proteger sus sistemas.</li>
+                        <li><strong>Compromiso legal:</strong> La legislación (RGPD, LOPDGDD) obliga a las organizaciones a proteger los datos personales.</li>
+                        <li><strong>Protección de la información:</strong> Los datos son un activo crítico. Su pérdida o robo puede tener consecuencias graves.</li>
+                        <li><strong>Carrera profesional:</strong> La ciberseguridad es una de las áreas con mayor demanda y mejores perspectivas salariales en el sector tecnológico.</li>
+                    </ul>
+                </div>
 
-        <div id="proximamenteContainer"></div>
+                <div class="card">
+                    <h2>Docente</h2>
+                    <table>
+                        <tr><th>Elemento</th><th>Detalle</th></tr>
+                        <tr><td><strong>Nombre</strong></td><td>Mónica Serrano</td></tr>
+                        <tr>
+                            <td><strong>Comunicación</strong></td>
+                            <td>
+                                <ul>
+                                    <li><strong>Webfamília:</strong> Canal oficial de comunicación con familias.</li>
+                                    <li><strong>Aules:</strong> Plataforma docente para materiales y entregas. <strong>⚠️ Activad las notificaciones en vuestra cuenta de correo <code>@alu.edu.gva.es</code></strong> para estar informados.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr><td><strong>Horario de Atención</strong></td><td>Jueves 9:50-10:45 (cita previa por Webfamília)</td></tr>
+                    </table>
+                </div>
 
-        <div class="card">
-            <h2>Contacto</h2>
-            <table>
-                <tr><th>Elemento</th><th>Detalle</th></tr>
-                <tr><td><strong>Profesora</strong></td><td>Mónica Serrano</td></tr>
-                <tr><td><strong>Correo electrónico</strong></td><td>m.serranogomez@edu.gva.es</td></tr>
-                <tr><td><strong>Horas de tutoría</strong></td><td>Jueves 9:50-10:45 (cita previa por correo electrónico)</td></tr>
-            </table>
-        </div>
+                <div class="card">
+                    <h2>Unidades de Programación (UP)</h2>
+                    <table>
+                        <tr><th>UP</th><th>Título</th></tr>
+                        <tbody id="udTableBody"></tbody>
+                    </table>
+                </div>
 
-        <div class="card">
-            <h2>Conocimientos previos</h2>
-            <p>En la primera sesión realizaremos un cuestionario para conocer vuestro nivel previo sobre los contenidos que necesitaremos. Esto me ayudará a adaptar el ritmo de trabajo.</p>
-            <p><strong>El cuestionario está disponible solo durante la primera sesión</strong> y no tiene nota. Es una herramienta diagnóstica.</p>
-            <p><a href="https://forms.cloud.microsoft/e/t3WAPbaxdn" target="_blank" style="display:inline-block;margin-top:0.5rem;padding:0.6rem 1.2rem;background:var(--primary);color:#fff;text-decoration:none;border-radius:var(--radius);font-weight:600;">Acceder al cuestionario</a></p>
-        </div>
+                <div id="proximamenteContainer"></div>
 
-        <div class="card">
-            <h2>Recursos</h2>
-            <ul>
-                <li><strong>Aules GVA:</strong> Material, cuestionarios, entregas de prácticas.</li>
-                <li><strong>Esta web:</strong> Consulta de contenidos y materiales de cada UD.</li>
-            </ul>
-        </div>
+                <div class="card">
+                    <h2>Conocimientos previos</h2>
+                    <p>En la primera sesión realizaremos un cuestionario para conocer vuestro nivel previo sobre los contenidos que necesitaremos. Esto me ayudará a adaptar el ritmo de trabajo.</p>
+                    <p><strong>El cuestionario está disponible solo durante la primera sesión</strong> y no tiene nota. Es una herramienta diagnóstica.</p>
+                    <p><a href="https://forms.cloud.microsoft/e/t3WAPbaxdn" target="_blank" style="display:inline-block;margin-top:0.5rem;padding:0.6rem 1.2rem;background:var(--primary);color:#fff;text-decoration:none;border-radius:var(--radius);font-weight:600;">Acceder al cuestionario</a></p>
+                </div>
 
+                <div class="card">
+                    <h2>Recursos</h2>
+                    <ul>
+                        <li><strong>Aules GVA:</strong> Material, cuestionarios, entregas de prácticas.</li>
+                        <li><strong>Esta web:</strong> Consulta de contenidos y materiales de cada UD.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
     </div>
 
-    <footer>
-        IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
-    </footer>
-
     <script>
-        document.getElementById('navContainer').innerHTML = getNavHTMLRoot('principal');
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTMLRoot('principal');
         document.getElementById('udTableBody').innerHTML = getUDTableHTML();
     </script>
 </body>

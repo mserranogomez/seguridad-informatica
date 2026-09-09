@@ -15,6 +15,7 @@
     --success: #38a169;
     --radius: 8px;
     --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --sidebar-width: 260px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -116,62 +117,123 @@ body {
     display: none;
 }
 
-/* --- Layout principal --- */
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 1.5rem;
+/* --- Layout con sidebar --- */
+.layout {
+    display: flex;
+    min-height: 100vh;
 }
 
-header {
-    background: var(--primary);
-    color: #fff;
-    padding: 1.5rem 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 1.6rem;
-    margin-bottom: 0.3rem;
-}
-
-header .info {
-    font-size: 0.9rem;
-    opacity: 0.85;
-}
-
-/* --- Navegación --- */
-nav {
+/* --- Sidebar --- */
+.sidebar {
+    width: var(--sidebar-width);
     background: var(--card);
-    border-bottom: 1px solid var(--border);
-    padding: 0.6rem 0;
-    position: sticky;
+    border-right: 1px solid var(--border);
+    position: fixed;
     top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
     z-index: 100;
     box-shadow: var(--shadow);
 }
 
-nav .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    justify-content: center;
-    padding: 0 1rem;
+.sidebar-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 1.2rem;
+    text-align: center;
 }
 
-nav a {
+.sidebar-header h1 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.sidebar-header .info {
+    font-size: 0.75rem;
+    opacity: 0.85;
+}
+
+.sidebar-nav {
+    padding: 0.5rem 0;
+}
+
+.sidebar-nav a {
+    display: block;
     color: var(--text);
     text-decoration: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: var(--radius);
-    font-size: 0.85rem;
-    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
     transition: background 0.2s;
 }
 
-nav a:hover, nav a.active {
+.sidebar-nav a:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.sidebar-nav a.active {
     background: var(--primary);
     color: #fff;
+    font-weight: 600;
+}
+
+.sidebar-nav .separator {
+    height: 1px;
+    background: var(--border);
+    margin: 0.5rem 0;
+}
+
+.sidebar-nav .section-title {
+    padding: 0.5rem 1.2rem 0.2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sidebar-nav .up-link {
+    padding-left: 1.2rem;
+}
+
+.sidebar-nav .sub-link {
+    padding-left: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.sidebar-nav .sub-link.active {
+    color: #fff;
+}
+
+/* --- Contenido principal --- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    min-width: 0;
+}
+
+.main-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.main-header .info {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
 }
 
 /* --- Tarjetas --- */
@@ -254,6 +316,16 @@ tr:nth-child(even) {
     font-size: 0.9rem;
 }
 
+/* --- Warning --- */
+.warning-box {
+    background: #fffbeb;
+    border-left: 4px solid #d69e2e;
+    padding: 1rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
 /* --- Imágenes --- */
 .img-container {
     text-align: center;
@@ -283,18 +355,6 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-/* --- Lista de herramientas --- */
-.herramienta {
-    display: inline-block;
-    background: #edf2f7;
-    color: var(--text);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-family: monospace;
-    margin: 0.15rem;
-}
-
 /* --- Código --- */
 code {
     background: #edf2f7;
@@ -320,18 +380,40 @@ pre code {
 }
 
 /* --- Responsive --- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
     .container {
         padding: 1rem;
     }
-    nav .container {
-        gap: 0.2rem;
-    }
-    nav a {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.5rem;
-    }
-    header h1 {
-        font-size: 1.3rem;
-    }
+}
+
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }

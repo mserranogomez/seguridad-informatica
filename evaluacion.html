@@ -14,107 +14,117 @@
         }
     </script>
 
-    <header>
-        <h1>Presentación y Evaluación</h1>
-        <p class="info">0226 · Seguridad Informática · Curso 26-27</p>
-    </header>
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
 
-    <nav>
-        <div class="container" id="navContainer"></div>
-    </nav>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Seguridad Informática</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
 
-    <div class="container">
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Presentación y Evaluación</h1>
+                <p class="info">0226 · Seguridad Informática · Curso 26-27</p>
+            </header>
 
-        <div class="card">
-            <h2>Presentación del módulo</h2>
+            <div class="container">
 
-            <h3>Resultados de aprendizaje</h3>
-            <p>Los resultados de aprendizaje (RA) describen el conocimiento, las habilidades y las actitudes que debéis demostrar al finalizar el módulo:</p>
-            <ol>
-                <li>Aplica medidas de seguridad pasiva en sistemas informáticos describiendo características de entornos y relacionándolas con sus necesidades.</li>
-                <li>Gestiona dispositivos de almacenamiento describiendo los procedimientos efectuados y aplicando técnicas para asegurar la integridad de la información.</li>
-                <li>Aplica mecanismos de seguridad activa describiendo sus características y relacionándolas con las necesidades de uso del sistema informático.</li>
-                <li>Asegura la privacidad de la información transmitida en redes informáticas describiendo vulnerabilidades e instalando software específico.</li>
-                <li>Reconoce la legislación y normativa sobre seguridad y protección de datos analizando las repercusiones de su incumplimiento.</li>
-            </ol>
-        </div>
+                <div class="card">
+                    <h2>Presentación del módulo</h2>
 
-        <div class="card">
-            <h2>Funcionamiento</h2>
+                    <h3>Resultados de aprendizaje</h3>
+                    <p>Los resultados de aprendizaje (RA) describen el conocimiento, las habilidades y las actitudes que debéis demostrar al finalizar el módulo:</p>
+                    <ol>
+                        <li>Aplica medidas de seguridad pasiva en sistemas informáticos describiendo características de entornos y relacionándolas con sus necesidades.</li>
+                        <li>Gestiona dispositivos de almacenamiento describiendo los procedimientos efectuados y aplicando técnicas para asegurar la integridad de la información.</li>
+                        <li>Aplica mecanismos de seguridad activa describiendo sus características y relacionándolas con las necesidades de uso del sistema informático.</li>
+                        <li>Asegura la privacidad de la información transmitida en redes informáticas describiendo vulnerabilidades e instalando software específico.</li>
+                        <li>Reconoce la legislación y normativa sobre seguridad y protección de datos analizando las repercusiones de su incumplimiento.</li>
+                    </ol>
+                </div>
 
-            <h3>Estructura de las clases</h3>
-            <p>Las clases tienen una duración de 55 minutos. Cada sesión sigue una estructura fija:</p>
+                <div class="card">
+                    <h2>Funcionamiento</h2>
 
-            <div class="info-box">
-                <ol>
-                    <li><strong>Inicio (5-10 min):</strong> Actividad breve de <strong>conexión</strong> con la sesión anterior o introducción al tema. Puede ser una pregunta, un caso real, un repaso rápido o un cuestionario corto.</li>
-                    <li><strong>Desarrollo teórico (15-20 min):</strong> Explicación de los conceptos nuevos con ejemplos y demostraciones en vivo.</li>
-                    <li><strong>Práctica guiada (15-20 min):</strong> Ejercicios prácticos donde aplicáis lo aprendido. Trabajo individual o en parejas, con resolución de dudas.</li>
-                    <li><strong>Cierre (5 min):</strong> Resumen de lo trabajado, preguntas finales y orientaciones.</li>
-                </ol>
+                    <h3>Estructura de las clases</h3>
+                    <p>Las clases tienen una duración de 55 minutos. Cada sesión sigue una estructura fija:</p>
+
+                    <div class="info-box">
+                        <ol>
+                            <li><strong>Inicio (5-10 min):</strong> Actividad breve de <strong>conexión</strong> con la sesión anterior o introducción al tema. Puede ser una pregunta, un caso real, un repaso rápido o un cuestionario corto.</li>
+                            <li><strong>Desarrollo teórico (15-20 min):</strong> Explicación de los conceptos nuevos con ejemplos y demostraciones en vivo.</li>
+                            <li><strong>Práctica guiada (15-20 min):</strong> Ejercicios prácticos donde aplicáis lo aprendido. Trabajo individual o en parejas, con resolución de dudas.</li>
+                            <li><strong>Cierre (5 min):</strong> Resumen de lo trabajado, preguntas finales y orientaciones.</li>
+                        </ol>
+                    </div>
+
+                    <h3>Entrega de prácticas</h3>
+                    <p>Las prácticas y ejercicios se entregarán a través de <strong>Aules</strong>. Cada práctica tendrá una <strong>fecha límite de entrega</strong> indicada en la correspondiente unidad de programación.</p>
+
+                    <h3>Normas básicas</h3>
+                    <ul>
+                        <li>Asistencia y puntualidad. Si faltáis, consultad el material y poneos al día.</li>
+                        <li>Responsabilidad y autonomía. Cada uno es responsable de su aprendizaje.</li>
+                        <li>Si algo no funciona, se cambia. Hablad conmigo.</li>
+                        <li><strong>El uso del móvil está terminantemente prohibido en clase</strong>, salvo que se indique lo contrario para alguna actividad específica del módulo. Si son utilizados: se entregan a jefatura de estudios/dirección; será devuelto una vez finalizada la jornada lectiva; más parte disciplinario.  </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Evaluación</h2>
+                    <p>La evaluación del módulo se basa en los resultados de aprendizaje, que se evalúan de forma independiente a lo largo del curso.</p>
+
+                    <h3>Componentes de evaluación</h3>
+                    <table>
+                        <tr><th>Componente</th><th>Peso</th><th>Descripción</th></tr>
+                        <tr>
+                            <td><strong>Prácticas / Ejercicios</strong></td>
+                            <td>30%</td>
+                            <td>Ejercicios en clase, prácticas. Entrega obligatoria.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exámenes por UP</strong></td>
+                            <td>70%</td>
+                            <td>Un examen por unidad de programación, con cuestionarios en Aules, preguntas abiertas y/o ejercicios prácticos.</td>
+                        </tr>
+                    </table>
+
+                    <h3>Sistema de calificación de RA</h3>
+                    <div class="info-box">
+                        <p><strong>Cada Resultado de Aprendizaje (RA) se evalúa de forma independiente.</strong> Para aprobar un RA, se debe alcanzar una calificación mínima de 5 en ese RA. Los RA que no hayan sido superados a lo largo del curso se deberán recuperar en la convocatoria extraordinaria.</p>
+                    </div>
+
+                    <h3>Tipo de actividades evaluables</h3>
+                    <ul>
+                        <li><strong>Cuestionarios en Aules:</strong> Opción múltiple y verdadero/falso. Autoevaluables, con posibilidad de repetir para mejorar la nota.</li>
+                        <li><strong>Exámenes escritos:</strong> Preguntas abiertas que evalúan comprensión, razonamiento y aplicación.</li>
+                        <li><strong>Prácticas de taller:</strong> Ejercicios prácticos con herramientas reales. Se valoran la correcta ejecución y la documentación.</li>
+                        <li><strong>Trabajos y casos:</strong> Análisis de casos reales, investigaciones, proyectos cortos.</li>
+                    </ul>
+
+                    <h3>Aspectos valorados</h3>
+                    <ul>
+                        <li><strong>Comprensión conceptual:</strong> Demostrar que se entienden los fundamentos.</li>
+                        <li><strong>Aplicación práctica:</strong> Saber usar las herramientas y comandos correctamente.</li>
+                        <li><strong>Resolución de problemas:</strong> Capacidad para diagnosticar y solucionar incidencias.</li>
+                        <li><strong>Presentación:</strong> Trabajo bien organizado y documentado.</li>
+                    </ul>
+                </div>
+
             </div>
 
-            <h3>Entrega de prácticas</h3>
-            <p>Las prácticas y ejercicios se entregarán a través de <strong>Aules</strong>. Cada práctica tendrá una <strong>fecha límite de entrega</strong> indicada en la correspondiente unidad de programación.</p>
-
-            <h3>Normas básicas</h3>
-            <ul>
-                <li>Asistencia y puntualidad. Si faltáis, consultad el material y poneos al día.</li>
-                <li>Responsabilidad y autonomía. Cada uno es responsable de su aprendizaje.</li>
-                <li>Si algo no funciona, se cambia. Hablad conmigo.</li>
-                <li><strong>El uso del móvil está terminantemente prohibido en clase</strong>, salvo que se indique lo contrario para alguna actividad específica del módulo. Si son utilizados: se entregan a jefatura de estudios/dirección; será devuelto una vez finalizada la jornada lectiva; más parte disciplinario.  </li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Evaluación</h2>
-            <p>La evaluación del módulo se basa en los resultados de aprendizaje, que se evalúan de forma independiente a lo largo del curso.</p>
-
-            <h3>Componentes de evaluación</h3>
-            <table>
-                <tr><th>Componente</th><th>Peso</th><th>Descripción</th></tr>
-                <tr>
-                    <td><strong>Prácticas / Ejercicios</strong></td>
-                    <td>30%</td>
-                    <td>Ejercicios en clase, prácticas. Entrega obligatoria.</td>
-                </tr>
-                <tr>
-                    <td><strong>Exámenes por UP</strong></td>
-                    <td>70%</td>
-                    <td>Un examen por unidad de programación, con cuestionarios en Aules, preguntas abiertas y/o ejercicios prácticos.</td>
-                </tr>
-            </table>
-
-            <h3>Sistema de calificación de RA</h3>
-            <div class="info-box">
-                <p><strong>Cada Resultado de Aprendizaje (RA) se evalúa de forma independiente.</strong> Para aprobar un RA, se debe alcanzar una calificación mínima de 5 en ese RA. Los RA que no hayan sido superados a lo largo del curso se deberán recuperar en la convocatoria extraordinaria.</p>
-            </div>
-
-            <h3>Tipo de actividades evaluables</h3>
-            <ul>
-                <li><strong>Cuestionarios en Aules:</strong> Opción múltiple y verdadero/falso. Autoevaluables, con posibilidad de repetir para mejorar la nota.</li>
-                <li><strong>Exámenes escritos:</strong> Preguntas abiertas que evalúan comprensión, razonamiento y aplicación.</li>
-                <li><strong>Prácticas de taller:</strong> Ejercicios prácticos con herramientas reales. Se valoran la correcta ejecución y la documentación.</li>
-                <li><strong>Trabajos y casos:</strong> Análisis de casos reales, investigaciones, proyectos cortos.</li>
-            </ul>
-
-            <h3>Aspectos valorados</h3>
-            <ul>
-                <li><strong>Comprensión conceptual:</strong> Demostrar que se entienden los fundamentos.</li>
-                <li><strong>Aplicación práctica:</strong> Saber usar las herramientas y comandos correctamente.</li>
-                <li><strong>Resolución de problemas:</strong> Capacidad para diagnosticar y solucionar incidencias.</li>
-                <li><strong>Presentación:</strong> Trabajo bien organizado y documentado.</li>
-            </ul>
-        </div>
-
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
     </div>
 
-    <footer>
-        IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
-    </footer>
-
     <script>
-        document.getElementById('navContainer').innerHTML = getNavHTMLRoot('evaluacion');
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTMLRoot('evaluacion');
     </script>
 </body>
 </html>

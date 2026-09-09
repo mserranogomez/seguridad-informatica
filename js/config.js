@@ -60,3 +60,33 @@ function getUDTableHTML() {
     }
     return html;
 }
+
+// --- Funciones para Sidebar ---
+
+function getSidebarHTMLRoot(paginaActual) {
+    let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
+    
+    for (let i = 1; i <= 6; i++) {
+        if (esUDActiva(i)) {
+            const active = paginaActual === 'ud' + i ? ' class="active"' : '';
+            html += '<a href="ud/ud' + i + '.html"' + active + '>UD' + i + ' ' + UDS_INFO[i].titulo + '</a>';
+        }
+    }
+    
+    html += '<a href="evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
+    return html;
+}
+
+function getSidebarHTML(paginaActual) {
+    let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
+    
+    for (let i = 1; i <= 6; i++) {
+        if (esUDActiva(i)) {
+            const active = paginaActual === 'ud' + i ? ' class="active"' : '';
+            html += '<a href="ud' + i + '.html"' + active + '>UD' + i + ' ' + UDS_INFO[i].titulo + '</a>';
+        }
+    }
+    
+    html += '<a href="../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
+    return html;
+}
