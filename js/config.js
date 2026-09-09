@@ -1,30 +1,38 @@
-// Configuración de UDs activas
-// Para activar una UD, añadir su número al array
-// Ejemplo: const UDS_ACTIVAS = [1, 2, 3];
-// Para ocultar todas: const UDS_ACTIVAS = [];
+// Configuración de UPs activas
+// Para activar una UP, añadir su número al array
+// Ejemplo: const UPS_ACTIVAS = [1, 2, 3];
+// Para ocultar todas: const UPS_ACTIVAS = [];
 
-const UDS_ACTIVAS = [];
+const UPS_ACTIVAS = [];
 
-const UDS_INFO = {
-    1: { titulo: "Fundamentos de Seguridad y Seguridad Física" },
-    2: { titulo: "Almacenamiento y Copias de Seguridad" },
-    3: { titulo: "Seguridad Activa y Software Malicioso" },
-    4: { titulo: "Criptografía e Identificación Digital" },
-    5: { titulo: "Seguridad en Redes" },
-    6: { titulo: "Legislación y Protección de Datos" }
+const UPS_INFO = {
+    1: { titulo: "Fundamentos de Seguridad y Seguridad Física", ra: "RA1" },
+    2: { titulo: "Almacenamiento y Copias de Seguridad", ra: "RA2" },
+    3: { titulo: "Seguridad Activa y Software Malicioso", ra: "RA3" },
+    4: { titulo: "Criptografía e Identificación Digital", ra: "RA4" },
+    5: { titulo: "Seguridad en Redes", ra: "RA4" },
+    6: { titulo: "Legislación y Protección de Datos", ra: "RA5" }
 };
 
-function esUDActiva(numUD) {
-    return UDS_ACTIVAS.includes(numUD);
+const RAS_INFO = {
+    RA1: "Aplica medidas de seguridad pasiva en sistemas informáticos",
+    RA2: "Gestiona dispositivos de almacenamiento y copias de seguridad",
+    RA3: "Aplica mecanismos de seguridad activa y software malicioso",
+    RA4: "Asegura la privacidad de la información transmitida en redes",
+    RA5: "Reconoce la legislación y normativa sobre seguridad y protección de datos"
+};
+
+function esUPActiva(numUP) {
+    return UPS_ACTIVAS.includes(numUP);
 }
 
 function getNavHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
     for (let i = 1; i <= 6; i++) {
-        if (esUDActiva(i)) {
-            const active = paginaActual === 'ud' + i ? ' class="active"' : '';
-            html += '<a href="ud' + i + '.html"' + active + '>UD' + i + '</a>';
+        if (esUPActiva(i)) {
+            const active = paginaActual === 'up' + i ? ' class="active"' : '';
+            html += '<a href="up' + i + '.html"' + active + '>UP' + i + '</a>';
         }
     }
     
@@ -36,9 +44,9 @@ function getNavHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
     for (let i = 1; i <= 6; i++) {
-        if (esUDActiva(i)) {
-            const active = paginaActual === 'ud' + i ? ' class="active"' : '';
-            html += '<a href="ud/ud' + i + '.html"' + active + '>UD' + i + '</a>';
+        if (esUPActiva(i)) {
+            const active = paginaActual === 'up' + i ? ' class="active"' : '';
+            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + '</a>';
         }
     }
     
@@ -46,17 +54,18 @@ function getNavHTMLRoot(paginaActual) {
     return html;
 }
 
-function getUDTableHTML() {
+function getUPTableHTML() {
     let html = '';
     for (let i = 1; i <= 6; i++) {
-        const info = UDS_INFO[i];
-        const estado = esUDActiva(i) 
+        const info = UPS_INFO[i];
+        const estado = esUPActiva(i) 
             ? '<span class="badge badge-info">' + i + '</span>' 
             : '<span class="badge" style="background:#cbd5e0;">' + i + '</span>';
-        const titulo = esUDActiva(i) 
-            ? '<a href="ud/ud' + i + '.html">' + info.titulo + '</a>' 
+        const titulo = esUPActiva(i) 
+            ? '<a href="up/up' + i + '.html">' + info.titulo + '</a>' 
             : info.titulo;
-        html += '<tr><td>' + estado + '</td><td>' + titulo + '</td></tr>';
+        const ra = info.ra || '';
+        html += '<tr><td>' + estado + '</td><td>' + titulo + (ra ? '<br><small style="color:var(--accent);font-weight:600;">' + ra + '</small>' : '') + '</td></tr>';
     }
     return html;
 }
@@ -67,9 +76,9 @@ function getSidebarHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
     for (let i = 1; i <= 6; i++) {
-        if (esUDActiva(i)) {
-            const active = paginaActual === 'ud' + i ? ' class="active"' : '';
-            html += '<a href="ud/ud' + i + '.html"' + active + '>UD' + i + ' ' + UDS_INFO[i].titulo + '</a>';
+        if (esUPActiva(i)) {
+            const active = paginaActual === 'up' + i ? ' class="active"' : '';
+            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
@@ -81,9 +90,9 @@ function getSidebarHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
     for (let i = 1; i <= 6; i++) {
-        if (esUDActiva(i)) {
-            const active = paginaActual === 'ud' + i ? ' class="active"' : '';
-            html += '<a href="ud' + i + '.html"' + active + '>UD' + i + ' ' + UDS_INFO[i].titulo + '</a>';
+        if (esUPActiva(i)) {
+            const active = paginaActual === 'up' + i ? ' class="active"' : '';
+            html += '<a href="up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
