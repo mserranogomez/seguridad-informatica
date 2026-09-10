@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Seguridad — UP1</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="../../js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../../index.html';
+        }
+    </script>
+
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>SIN</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>1.2 Tipos de Seguridad Informática</h1>
+                <p class="info">0226 · UP1: Fundamentos de la SI</p>
+            </header>
+
+            <div class="container">
+                <div class="card">
+                    <h2>Clasificación de la seguridad</h2>
+                    <div style="text-align:center; margin:15px 0">
+                        <img src="img/clasificacion.svg" alt="Clasificación de la seguridad" style="max-width:450px; width:100%">
+                    </div>
+                    <p>La seguridad informática se puede clasificar según dos criterios principales:</p>
+                </div>
+
+                <div class="card">
+                    <h2>Según el activo a proteger</h2>
+
+                    <h3>Seguridad Física</h3>
+                    <p>Protege el <strong>hardware</strong> y las instalaciones de amenazas físicas:</p>
+                    <table>
+                        <tr><th>Amenaza</th><th>Mecanismo de defensa</th></tr>
+                        <tr><td>Incendios y humo</td><td>Extintores, detectores de humo</td></tr>
+                        <tr><td>Inundaciones</td><td>Impermeabilización, ubicación correcta del CPD</td></tr>
+                        <tr><td>Robos</td><td>Control de acceso, sistemas biométricos</td></tr>
+                        <tr><td>Ruido eléctrico</td><td>Correcta ubicación del CPD</td></tr>
+                        <tr><td>Terremotos</td><td>Construcción acondicionada</td></tr>
+                        <tr><td>Temperaturas extremas</td><td>Aire acondicionado (10-32ºC)</td></tr>
+                        <tr><td>Electricidad</td><td>SAI, filtros, tomas de tierra</td></tr>
+                    </table>
+
+                    <h3>Seguridad Lógica</h3>
+                    <p>Protege el <strong>software</strong>, datos y accesos:</p>
+                    <table>
+                        <tr><th>Amenaza</th><th>Mecanismo de defensa</th></tr>
+                        <tr><td>Robo de información</td><td>Cifrado de datos</td></tr>
+                        <tr><td>Pérdida de datos</td><td>Backups, sistemas de ficheros redundantes</td></tr>
+                        <tr><td>Pérdida de integridad</td><td>Programas de verificación y backup</td></tr>
+                        <tr><td>Virus</td><td>Antivirus, actualizaciones</td></tr>
+                        <tr><td>Ataques de red</td><td>Firewalls, proxy, monitorización</td></tr>
+                        <tr><td>Intrusiones</td><td>Contraseñas, ACL, cifrado</td></tr>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h2>Según el momento de actuación</h2>
+
+                    <h3>Seguridad Activa</h3>
+                    <p>Conjunto de medidas que <strong>previenen</strong> y evitan daños en los sistemas:</p>
+                    <ul>
+                        <li>Contraseñas</li>
+                        <li>Listas de control de acceso (ACL)</li>
+                        <li>Encriptación</li>
+                        <li>Firmas y certificados digitales</li>
+                        <li>Sistemas de ficheros con tolerancia a fallos</li>
+                        <li>Cuotas de disco</li>
+                    </ul>
+
+                    <h3>Seguridad Pasiva</h3>
+                    <p>Complementa a la activa y se encarga de <strong>minimizar los efectos</strong> cuando algo ya ha ocurrido:</p>
+                    <ul>
+                        <li>Conjunto de discos redundantes (RAID)</li>
+                        <li>SAI (permite apagado programado)</li>
+                        <li>Backups (recuperación del sistema)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTML('clasificacion', 1);
+    </script>
+</body>
+</html>

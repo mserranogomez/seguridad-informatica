@@ -3,7 +3,7 @@
 // Ejemplo: const UPS_ACTIVAS = [1, 2, 3];
 // Para ocultar todas: const UPS_ACTIVAS = [];
 
-const UPS_ACTIVAS = [];
+const UPS_ACTIVAS = [1];
 
 const UPS_INFO = {
     1: { titulo: "Fundamentos de la Seguridad Informática", ra: "RA1, RA5", eval: "1ª" },

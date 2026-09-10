@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerabilidades — UP1</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="../../js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../../index.html';
+        }
+    </script>
+
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>SIN</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>1.4 Vulnerabilidades y amenazas</h1>
+                <p class="info">0226 · UP1: Fundamentos de la SI</p>
+            </header>
+
+            <div class="container">
+                <div class="card">
+                    <h2>¿Qué es una vulnerabilidad?</h2>
+                    <p>Una vulnerabilidad es un <strong>fallo o deficiencia</strong> en un sistema que puede ser explotada por un atacante. Pueden ser más o menos actuales, conocidas y con distintos niveles de gravedad.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Tipos de amenazas</h2>
+
+                    <h3>Ingeniería social y Phishing</h3>
+                    <p>Manipulación psicológica para engañar a los usuarios y conseguir credenciales, pagos o descargas maliciosas. Variantes: spear phishing (dirigido), smishing (SMS), vishing (llamadas).</p>
+
+                    <h3>Malware (Software malicioso)</h3>
+                    <table>
+                        <tr><th>Tipo</th><th>Descripción</th></tr>
+                        <tr><td><strong>Ransomware</strong></td><td>Cifra archivos y exige rescate económico</td></tr>
+                        <tr><td><strong>Troyanos</strong></td><td>Apariencia inofensiva, instala puertas traseras</td></tr>
+                        <tr><td><strong>Virus</strong></td><td>Se replica infectando archivos ejecutables</td></tr>
+                        <tr><td><strong>Gusanos</strong></td><td>Se propaga automáticamente por la red</td></tr>
+                    </table>
+
+                    <h3>Denegación de Servicio (DoS/DDoS)</h3>
+                    <p>Saturación de tráfico para dejar un servicio inaccesible. Utiliza redes de dispositivos infectados (botnets).</p>
+
+                    <h3>Ataques web</h3>
+                    <ul>
+                        <li><strong>SQL Injection:</strong> inserción de código en bases de datos.</li>
+                        <li><strong>XSS:</strong> ejecución de scripts maliciosos en navegadores.</li>
+                        <li><strong>CSRF:</strong> manipulación de sesiones de usuario.</li>
+                    </ul>
+
+                    <h3>Ataques a redes</h3>
+                    <ul>
+                        <li><strong>ARP Poisoning:</strong> manipulación de tablas ARP.</li>
+                        <li><strong>DNS Poisoning:</strong> redirección de tráfico.</li>
+                        <li><strong>Man-in-the-Middle:</strong> interceptación de comunicaciones.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Tipos de atacantes</h2>
+                    <table>
+                        <tr><th>Tipo</th><th>Descripción</th></tr>
+                        <tr><td><strong>Hackers</strong></td><td>Realizan ataques intencionados contra sistemas</td></tr>
+                        <tr><td><strong>Crackers</strong></td><td>Usan ingeniería social para enviar malware</td></tr>
+                        <tr><td><strong>Sniffers</strong></td><td>Interceptan y analizan tráfico de red</td></tr>
+                        <tr><td><strong>Lammer</strong></td><td>Aficionado que presume de conocimientos que no tiene, usa scripts sin entenderlos</td></tr>
+                    </table>
+
+                    <div class="info-box">
+                        <p><strong>Atención:</strong> El término "hacker" originalmente se usaba para alguien con grandes conocimientos técnicos. Hoy en sentido peyorativo se refiere a atacantes maliciosos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTML('amenazas', 1);
+    </script>
+</body>
+</html>

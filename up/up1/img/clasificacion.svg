@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 280" font-family="Arial, sans-serif">
+  <text x="225" y="25" text-anchor="middle" fill="#2c3e50" font-size="15" font-weight="bold">Tipos de Seguridad Informática</text>
+  <!-- Rama 1: Por activo -->
+  <rect x="20" y="50" width="130" height="30" rx="5" fill="#34495e"/>
+  <text x="85" y="70" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Según el ACTIVO</text>
+  <rect x="20" y="90" width="130" height="55" rx="5" fill="#e74c3c"/>
+  <text x="85" y="112" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Física</text>
+  <text x="85" y="128" text-anchor="middle" fill="white" font-size="8">Protege hardware</text>
+  <rect x="20" y="155" width="130" height="55" rx="5" fill="#3498db"/>
+  <text x="85" y="177" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Lógica</text>
+  <text x="85" y="193" text-anchor="middle" fill="white" font-size="8">Protege software/datos</text>
+  <!-- Rama 2: Por momento -->
+  <rect x="170" y="50" width="140" height="30" rx="5" fill="#34495e"/>
+  <text x="240" y="70" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Según el MOMENTO</text>
+  <rect x="170" y="90" width="140" height="55" rx="5" fill="#2ecc71"/>
+  <text x="240" y="112" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Activa</text>
+  <text x="240" y="128" text-anchor="middle" fill="white" font-size="8">Previene ataques</text>
+  <rect x="170" y="155" width="140" height="55" rx="5" fill="#e67e22"/>
+  <text x="240" y="177" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Pasiva</text>
+  <text x="240" y="193" text-anchor="middle" fill="white" font-size="8">Minimiza efectos</text>
+  <!-- Rama 3: Ejemplos -->
+  <rect x="330" y="50" width="110" height="30" rx="5" fill="#34495e"/>
+  <text x="385" y="70" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Herramientas</text>
+  <rect x="330" y="90" width="110" height="120" rx="5" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="340" y="108" fill="#2c3e50" font-size="8">• Firewalls</text>
+  <text x="340" y="122" fill="#2c3e50" font-size="8">• Antivirus</text>
+  <text x="340" y="136" fill="#2c3e50" font-size="8">• Cifrado</text>
+  <text x="340" y="150" fill="#2c3e50" font-size="8">• Backups</text>
+  <text x="340" y="164" fill="#2c3e50" font-size="8">• SAI</text>
+  <text x="340" y="178" fill="#2c3e50" font-size="8">• Contraseñas</text>
+  <text x="340" y="192" fill="#2c3e50" font-size="8">• ACL</text>
+</svg>
