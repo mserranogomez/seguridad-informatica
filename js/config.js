@@ -3,10 +3,9 @@
 // Ejemplo: const UPS_ACTIVAS = [1, 2, 3];
 // Para ocultar todas: const UPS_ACTIVAS = [];
 
-const UPS_ACTIVAS = [0];
+const UPS_ACTIVAS = [];
 
 const UPS_INFO = {
-    0: { titulo: "Presentación del módulo", ra: null, eval: null },
     1: { titulo: "Fundamentos de la Seguridad Informática", ra: "RA1, RA5", eval: "1ª" },
     2: { titulo: "Hardware y Gestión del Almacenamiento", ra: "RA2", eval: "1ª" },
     3: { titulo: "Criptografía", ra: "RA4", eval: "1ª" },
@@ -15,13 +14,6 @@ const UPS_INFO = {
 };
 
 const UP_SUBPAGES = {
-    0: [
-        { archivo: "presentacion.html", titulo: "Presentación" },
-        { archivo: "calendario.html", titulo: "Calendario" },
-        { archivo: "objetivos.html", titulo: "Objetivos" },
-        { archivo: "funcionamiento.html", titulo: "Funcionamiento" },
-        { archivo: "evaluacion.html", titulo: "Evaluación" }
-    ],
     1: [
         { archivo: "objetivos.html", titulo: "Objetivos de la SI" },
         { archivo: "clasificacion.html", titulo: "Tipos de Seguridad" },
@@ -70,11 +62,10 @@ function esUPActiva(numUP) {
 function getNavHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            const label = i === 0 ? 'UP0' : 'UP' + i;
-            html += '<a href="' + (i === 0 ? '../up0/index.html' : 'up' + i + '.html') + '"' + active + '>' + label + '</a>';
+            html += '<a href="up' + i + '.html"' + active + '>UP' + i + '</a>';
         }
     }
     
@@ -85,11 +76,10 @@ function getNavHTML(paginaActual) {
 function getNavHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            const label = i === 0 ? 'UP0' : 'UP' + i;
-            html += '<a href="' + (i === 0 ? 'up0/index.html' : 'up/up' + i + '.html') + '"' + active + '>' + label + '</a>';
+            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + '</a>';
         }
     }
     
@@ -99,13 +89,13 @@ function getNavHTMLRoot(paginaActual) {
 
 function getUPTableHTML() {
     let html = '';
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         const info = UPS_INFO[i];
         const estado = esUPActiva(i) 
             ? '<span class="badge badge-info">' + i + '</span>' 
             : '<span class="badge" style="background:#cbd5e0;">' + i + '</span>';
         const titulo = esUPActiva(i) 
-            ? '<a href="' + (i === 0 ? 'up0/index.html' : 'up/up' + i + '.html') + '">' + info.titulo + '</a>' 
+            ? '<a href="up/up' + i + '.html">' + info.titulo + '</a>' 
             : info.titulo;
         const ra = info.ra || '';
         const evalLabel = info.eval || '';
@@ -120,11 +110,10 @@ function getUPTableHTML() {
 function getSidebarHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            const label = i === 0 ? 'UP0' : 'UP' + i;
-            html += '<a href="' + (i === 0 ? 'up0/index.html' : 'up/up' + i + '.html') + '"' + active + '>' + label + ' ' + UPS_INFO[i].titulo + '</a>';
+            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
@@ -135,11 +124,10 @@ function getSidebarHTMLRoot(paginaActual) {
 function getSidebarHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            const label = i === 0 ? 'UP0' : 'UP' + i;
-            html += '<a href="' + (i === 0 ? '../up0/index.html' : 'up' + i + '.html') + '"' + active + '>' + label + ' ' + UPS_INFO[i].titulo + '</a>';
+            html += '<a href="up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
