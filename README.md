@@ -8,12 +8,12 @@
     ╔═══════════════════════════════════════╗
     ║  🛡️  FIREWALL ACTIVO  🛡️             ║
     ║                                       ║
-    ║   ┌─────────┐    ┌─────────┐         ║
-    ║   │  HACKER │───▶│  BLOQUEADO │      ║
-    ║   └─────────┘    └─────────┘         ║
+    ║   ┌─────────┐     ┌──────────┐        ║
+    ║   │  HACKER │───▶│ BLOQUEADO │       ║
+    ║   └─────────┘     └──────────┘        ║
     ║                                       ║
     ║   Contraseña: ••••••••                ║
-    ║   Estado: ✅ Seguro                   ║
+    ║   Estado: ✅ Seguro                  ║
     ╚═══════════════════════════════════════╝
 ```
 
@@ -24,17 +24,6 @@ Módulo de seguridad informática que abarca desde la protección física de sis
 ## 🌐 Web del módulo
 
 **[https://mserranogomez.github.io/seguridad-informatica/](https://mserranogomez.github.io/seguridad-informatica/)**
-
-## Unidades de Programación
-
-| UP | Título | RA |
-|----|--------|-----|
-| 1 | Fundamentos de Seguridad y Seguridad Física | RA1 |
-| 2 | Almacenamiento y Copias de Seguridad | RA2 |
-| 3 | Seguridad Activa y Software Malicioso | RA3 |
-| 4 | Criptografía e Identificación Digital | RA4 |
-| 5 | Seguridad en Redes | RA4 |
-| 6 | Legislación y Protección de Datos | RA5 |
 
 ## Docente
 
