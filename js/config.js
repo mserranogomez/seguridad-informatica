@@ -62,28 +62,30 @@ function esUPActiva(numUP) {
 function getNavHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
+    html += '<a href="../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
+    
     for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up' + i + '.html"' + active + '>UP' + i + '</a>';
+            html += '<a href="up' + i + '/index.html"' + active + '>UP' + i + '</a>';
         }
     }
     
-    html += '<a href="../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
     return html;
 }
 
 function getNavHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
+    html += '<a href="evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
+    
     for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + '</a>';
+            html += '<a href="up/up' + i + '/index.html"' + active + '>UP' + i + '</a>';
         }
     }
     
-    html += '<a href="evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
     return html;
 }
 
@@ -95,7 +97,7 @@ function getUPTableHTML() {
             ? '<span class="badge badge-info">' + i + '</span>' 
             : '<span class="badge" style="background:#cbd5e0;">' + i + '</span>';
         const titulo = esUPActiva(i) 
-            ? '<a href="up/up' + i + '.html">' + info.titulo + '</a>' 
+            ? '<a href="up/up' + i + '/index.html">' + info.titulo + '</a>' 
             : info.titulo;
         const ra = info.ra || '';
         const evalLabel = info.eval || '';
@@ -110,27 +112,33 @@ function getUPTableHTML() {
 function getSidebarHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
+    html += '<a href="evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
+    
+    html += '<div class="separator"></div>';
+    
     for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
+            html += '<a href="up/up' + i + '/index.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
-    html += '<a href="evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
     return html;
 }
 
 function getSidebarHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
+    html += '<a href="../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
+    
+    html += '<div class="separator"></div>';
+    
     for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
+            html += '<a href="up' + i + '/index.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
-    html += '<a href="../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
     return html;
 }
