@@ -136,9 +136,9 @@ function getSidebarHTMLRoot(paginaActual, numUPActiva) {
 }
 
 function getSidebarHTML(paginaActual, numUPActiva) {
-    let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
+    let html = '<a href="../../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    html += '<a href="../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
+    html += '<a href="../../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
     
     html += '<div class="separator"></div>';
     
