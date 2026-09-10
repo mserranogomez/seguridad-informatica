@@ -101,7 +101,7 @@ function getUPTableHTML() {
         const evalLabel = info.eval || '';
         html += '<tr><td>' + estado + '</td><td>' + titulo + (ra ? '<br><small style="color:var(--accent);font-weight:600;">' + ra + '</small>' : '') + '</td><td>' + evalLabel + '</td></tr>';
     }
-    html += '<tr><td><span class="badge" style="background:#cbd5e0;">FIE</span></td><td>Formación en Empresa</td><td>3ª</td></tr>';
+    html += '<tr><td><span class="badge" style="background:#cbd5e0;">FE</span></td><td>Formación en Empresa</td><td>3ª</td></tr>';
     return html;
 }
 
