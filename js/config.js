@@ -6,20 +6,61 @@
 const UPS_ACTIVAS = [];
 
 const UPS_INFO = {
-    1: { titulo: "Fundamentos de Seguridad y Seguridad Física", ra: "RA1", eval: "1ª" },
-    2: { titulo: "Almacenamiento y Copias de Seguridad", ra: "RA2", eval: "1ª" },
-    3: { titulo: "Seguridad Activa y Software Malicioso", ra: "RA3", eval: "2ª" },
-    4: { titulo: "Criptografía e Identificación Digital", ra: "RA4", eval: "1ª" },
-    5: { titulo: "Seguridad en Redes", ra: "RA4", eval: "2ª" },
-    6: { titulo: "Legislación y Protección de Datos", ra: "RA5", eval: "2ª" }
+    0: { titulo: "Presentación del módulo", ra: null, eval: null },
+    1: { titulo: "Fundamentos de la Seguridad Informática", ra: "RA1, RA5", eval: "1ª" },
+    2: { titulo: "Hardware y Gestión del Almacenamiento", ra: "RA2", eval: "1ª" },
+    3: { titulo: "Criptografía", ra: "RA4", eval: "1ª" },
+    4: { titulo: "Seguridad en el Sistema Operativo", ra: "RA3", eval: "2ª" },
+    5: { titulo: "Seguridad en Redes", ra: "RA4", eval: "2ª" }
+};
+
+const UP_SUBPAGES = {
+    0: [
+        { archivo: "presentacion.html", titulo: "Presentación" },
+        { archivo: "calendario.html", titulo: "Calendario" },
+        { archivo: "objetivos.html", titulo: "Objetivos" },
+        { archivo: "funcionamiento.html", titulo: "Funcionamiento" },
+        { archivo: "evaluacion.html", titulo: "Evaluación" }
+    ],
+    1: [
+        { archivo: "objetivos.html", titulo: "Objetivos de la SI" },
+        { archivo: "clasificacion.html", titulo: "Tipos de Seguridad" },
+        { archivo: "ciclo.html", titulo: "El ciclo de vida de la SI" },
+        { archivo: "amenazas.html", titulo: "Vulnerabilidades" },
+        { archivo: "practicas.html", titulo: "Buenas Prácticas" },
+        { archivo: "legislacion.html", titulo: "Legislación" }
+    ],
+    2: [
+        { archivo: "fisica.html", titulo: "Seguridad Física" },
+        { archivo: "almacenamiento.html", titulo: "Almacenamiento" },
+        { archivo: "recuperacion.html", titulo: "Recuperación" }
+    ],
+    3: [
+        { archivo: "tecnicas.html", titulo: "Técnicas criptográficas" },
+        { archivo: "cifrado.html", titulo: "Cifrado" },
+        { archivo: "resumen.html", titulo: "Función resumen" },
+        { archivo: "firma.html", titulo: "Firma digital" },
+        { archivo: "ejemplos.html", titulo: "Ejemplos de uso" }
+    ],
+    4: [
+        { archivo: "acceso.html", titulo: "Políticas de acceso" },
+        { archivo: "seglogica.html", titulo: "Seguridad Lógica" }
+    ],
+    5: [
+        { archivo: "conectividad.html", titulo: "Conectividad" },
+        { archivo: "herramientas.html", titulo: "Herramientas de seguridad" },
+        { archivo: "deteccion.html", titulo: "Sistemas de detección" },
+        { archivo: "inalambricas.html", titulo: "Redes inalámbricas" },
+        { archivo: "ataques.html", titulo: "Ejemplos de ataques" }
+    ]
 };
 
 const RAS_INFO = {
-    RA1: "Aplica medidas de seguridad pasiva en sistemas informáticos",
-    RA2: "Gestiona dispositivos de almacenamiento y copias de seguridad",
-    RA3: "Aplica mecanismos de seguridad activa y software malicioso",
-    RA4: "Asegura la privacidad de la información transmitida en redes",
-    RA5: "Reconoce la legislación y normativa sobre seguridad y protección de datos"
+    RA1: "Aplica medidas de seguridad pasiva en sistemas informáticos, describiendo características de entornos y relacionándolas con sus necesidades",
+    RA2: "Gestiona dispositivos de almacenamiento, describiendo los procedimientos efectuados y aplicando técnicas para asegurar la integridad de la información",
+    RA3: "Aplica mecanismos de seguridad activa, describiendo sus características y relacionándolas con las necesidades de uso del sistema informático",
+    RA4: "Asegura la privacidad de la información transmitida en redes informáticas, describiendo vulnerabilidades e instalando software específico",
+    RA5: "Reconoce la legislación y normativa sobre seguridad y protección de datos, analizando las repercusiones de su incumplimiento"
 };
 
 function esUPActiva(numUP) {
@@ -29,10 +70,11 @@ function esUPActiva(numUP) {
 function getNavHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 0; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up' + i + '.html"' + active + '>UP' + i + '</a>';
+            const label = i === 0 ? 'UP0' : 'UP' + i;
+            html += '<a href="' + (i === 0 ? '../up0/index.html' : 'up' + i + '.html') + '"' + active + '>' + label + '</a>';
         }
     }
     
@@ -43,10 +85,11 @@ function getNavHTML(paginaActual) {
 function getNavHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 0; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + '</a>';
+            const label = i === 0 ? 'UP0' : 'UP' + i;
+            html += '<a href="' + (i === 0 ? 'up0/index.html' : 'up/up' + i + '.html') + '"' + active + '>' + label + '</a>';
         }
     }
     
@@ -56,13 +99,13 @@ function getNavHTMLRoot(paginaActual) {
 
 function getUPTableHTML() {
     let html = '';
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 0; i <= 5; i++) {
         const info = UPS_INFO[i];
         const estado = esUPActiva(i) 
             ? '<span class="badge badge-info">' + i + '</span>' 
             : '<span class="badge" style="background:#cbd5e0;">' + i + '</span>';
         const titulo = esUPActiva(i) 
-            ? '<a href="up/up' + i + '.html">' + info.titulo + '</a>' 
+            ? '<a href="' + (i === 0 ? 'up0/index.html' : 'up/up' + i + '.html') + '">' + info.titulo + '</a>' 
             : info.titulo;
         const ra = info.ra || '';
         const evalLabel = info.eval || '';
@@ -77,10 +120,11 @@ function getUPTableHTML() {
 function getSidebarHTMLRoot(paginaActual) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 0; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up/up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
+            const label = i === 0 ? 'UP0' : 'UP' + i;
+            html += '<a href="' + (i === 0 ? 'up0/index.html' : 'up/up' + i + '.html') + '"' + active + '>' + label + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
@@ -91,10 +135,11 @@ function getSidebarHTMLRoot(paginaActual) {
 function getSidebarHTML(paginaActual) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 0; i <= 5; i++) {
         if (esUPActiva(i)) {
             const active = paginaActual === 'up' + i ? ' class="active"' : '';
-            html += '<a href="up' + i + '.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
+            const label = i === 0 ? 'UP0' : 'UP' + i;
+            html += '<a href="' + (i === 0 ? '../up0/index.html' : 'up' + i + '.html') + '"' + active + '>' + label + ' ' + UPS_INFO[i].titulo + '</a>';
         }
     }
     
