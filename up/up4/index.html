@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP4: Seguridad en el Sistema Operativo</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="../../js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../../index.html';
+        }
+        if (!esUPActiva(4)) {
+            document.body.innerHTML = '<div style="text-align:center;padding:4rem 2rem;"><h1>Próximamente</h1><p style="margin:1rem 0;">Esta unidad aún no está disponible.</p><a href="../../principal.html" style="color:var(--primary);">← Volver al inicio</a></div>';
+        }
+    </script>
+
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>SIN</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>UP4: Seguridad en el Sistema Operativo</h1>
+                <p class="info">0226 · RA3 · 2ª Evaluación</p>
+            </header>
+
+            <div class="container">
+                <div class="card">
+                    <h2>Resultado de aprendizaje</h2>
+                    <p><strong>RA3:</strong> Aplica mecanismos de seguridad activa, describiendo sus características y relacionándolas con las necesidades de uso del sistema informático.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Contenidos</h2>
+                    <h3>Políticas de acceso</h3>
+                    <ul>
+                        <li><strong>Contraseñas:</strong> Política de contraseñas, complejidad, caducidad.</li>
+                        <li><strong>BIOS/UEFI:</strong> Contraseña de administrador y de usuario.</li>
+                        <li><strong>Gestor de arranque:</strong> Protección de GRUB.</li>
+                        <li><strong>Gestores de contraseñas:</strong> Herramientas y buenas prácticas.</li>
+                    </ul>
+
+                    <h3>Cifrado de información</h3>
+                    <ul>
+                        <li>Cifrado de directorios, particiones y discos.</li>
+                        <li>Herramientas: BitLocker, eCryptfs, LUKS.</li>
+                    </ul>
+
+                    <h3>Permisos</h3>
+                    <ul>
+                        <li><strong>DAC:</strong> Control de acceso discrecional (chmod, ACL, SUID, SGID, Sticky Bit).</li>
+                        <li><strong>MAC:</strong> Control de acceso obligatorio (SELinux, AppArmor).</li>
+                        <li><strong>RBAC:</strong> Control de acceso basado en roles.</li>
+                        <li>Elevación de privilegios: UAC, sudo/sudoers.</li>
+                    </ul>
+
+                    <h3>Cuotas de disco</h3>
+                    <ul>
+                        <li>Configuración en Windows y Linux.</li>
+                        <li>Límites de espacio por usuario.</li>
+                    </ul>
+
+                    <h3>Chroot</h3>
+                    <ul>
+                        <li>Jaulas para aislar procesos.</li>
+                        <li>Usos: recuperación de contraseñas, seguridad de servidores.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Prácticas</h2>
+                    <h3>Práctica 4.1: Instalación encriptada</h3>
+                    <p>Realizar una instalación encriptada de un SO en una estructura dinámica.</p>
+
+                    <h3>Práctica 4.2: Cuotas de disco</h3>
+                    <p>Montar un sistema de cuotas en Linux y Windows.</p>
+                </div>
+            </div>
+
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTML('index', 4);
+    </script>
+</body>
+</html>

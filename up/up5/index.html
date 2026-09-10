@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP5: Seguridad en Redes</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="../../js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../../index.html';
+        }
+        if (!esUPActiva(5)) {
+            document.body.innerHTML = '<div style="text-align:center;padding:4rem 2rem;"><h1>Próximamente</h1><p style="margin:1rem 0;">Esta unidad aún no está disponible.</p><a href="../../principal.html" style="color:var(--primary);">← Volver al inicio</a></div>';
+        }
+    </script>
+
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>SIN</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>UP5: Seguridad en Redes</h1>
+                <p class="info">0226 · RA4 · 2ª Evaluación</p>
+            </header>
+
+            <div class="container">
+                <div class="card">
+                    <h2>Resultado de aprendizaje</h2>
+                    <p><strong>RA4:</strong> Asegura la privacidad de la información transmitida en redes informáticas, describiendo vulnerabilidades e instalando software específico.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Contenidos</h2>
+                    <h3>Conectividad</h3>
+                    <ul>
+                        <li>Topologías de red y seguridad.</li>
+                        <li>Direccionamiento IP y subnetting.</li>
+                        <li>VLAN: redes lógicas independientes.</li>
+                        <li>Seguridad de puertos en switches.</li>
+                        <li>VPN: Redes Privadas Virtuales.</li>
+                    </ul>
+
+                    <h3>Herramientas de seguridad</h3>
+                    <ul>
+                        <li><strong>Firewalls:</strong> iptables, nftables, firewalld.</li>
+                        <li><strong>IDS/IPS:</strong> Sistemas de detección/prevenión de intrusos.</li>
+                        <li><strong>Honeypots:</strong> Sistemas trampa.</li>
+                    </ul>
+
+                    <h3>Sistemas de detección</h3>
+                    <ul>
+                        <li>Análisis de tráfico de red.</li>
+                        <li>Monitorización y alertas.</li>
+                        <li>Registros y logs.</li>
+                    </ul>
+
+                    <h3>Redes inalámbricas</h3>
+                    <ul>
+                        <li>Protocolos de seguridad: WEP, WPA, WPA2, WPA3.</li>
+                        <li>Vulnerabilidades WiFi.</li>
+                        <li>Herramientas de auditoría: Aircrack-ng.</li>
+                    </ul>
+
+                    <h3>Ejemplos de ataques</h3>
+                    <ul>
+                        <li>ARP Poisoning, DNS Poisoning.</li>
+                        <li>Man-in-the-Middle.</li>
+                        <li>DoS/DDoS.</li>
+                        <li>Sniffing con Wireshark.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Prácticas</h2>
+                    <h3>Práctica 5.1: Configuración de conectividad</h3>
+                    <p>Configurar la conectividad de un switch, incluyendo VLAN y seguridad de puertos.</p>
+
+                    <h3>Práctica 5.2: Análisis de tráfico</h3>
+                    <p>Utilizar Wireshark para analizar tráfico de red y detectar posibles amenazas.</p>
+                </div>
+            </div>
+
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTML('index', 5);
+    </script>
+</body>
+</html>

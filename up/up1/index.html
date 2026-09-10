@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP1: Fundamentos de la Seguridad Informática</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <script src="../../js/config.js"></script>
+</head>
+<body>
+    <script>
+        if (!sessionStorage.getItem('autenticado')) {
+            window.location.href = '../../index.html';
+        }
+        if (!esUPActiva(1)) {
+            document.body.innerHTML = '<div style="text-align:center;padding:4rem 2rem;"><h1>Próximamente</h1><p style="margin:1rem 0;">Esta unidad aún no está disponible.</p><a href="../../principal.html" style="color:var(--primary);">← Volver al inicio</a></div>';
+        }
+    </script>
+
+    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>SIN</h1>
+                <p class="info">0226 · SMR</p>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav"></nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>UP1: Fundamentos de la Seguridad Informática</h1>
+                <p class="info">0226 · RA1, RA5 · 1ª Evaluación</p>
+            </header>
+
+            <div class="container">
+                <div class="card">
+                    <h2>Resultado de aprendizaje</h2>
+                    <p><strong>RA1:</strong> Aplica medidas de seguridad pasiva en sistemas informáticos describiendo características de entornos y relacionándolas con sus necesidades.</p>
+                    <p><strong>RA5:</strong> Reconoce la legislación y normativa sobre seguridad y protección de datos, analizando las repercusiones de su incumplimiento.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Contenidos</h2>
+                    <h3>Objetivos de la Seguridad Informática</h3>
+                    <ul>
+                        <li>Proteger los 4 elementos: Información, Material, Redes y Comunicaciones, Usuarios.</li>
+                        <li>Características: Confidencialidad, Integridad, Disponibilidad, Autenticación, Irrefutabilidad.</li>
+                        <li>Mecanismos: Autenticación, Autorización, SAI, Encriptación, Backups, RAID, Antivirus, Firewalls, Proxys.</li>
+                    </ul>
+
+                    <h3>Tipos de Seguridad</h3>
+                    <ul>
+                        <li><strong>Según el activo:</strong> Física (hardware) vs Lógica (software/datos).</li>
+                        <li><strong>Según el momento:</strong> Activa (prevención) vs Pasiva (recuperación).</li>
+                    </ul>
+
+                    <h3>El ciclo de vida de la SI</h3>
+                    <ul>
+                        <li>Proceso de mejora continua (PDCA): Plan-Do-Check-Act.</li>
+                        <li>Identificar activos, evaluar riesgos, diseñar plan, formación.</li>
+                        <li>Documentación: Política de seguridad, inventario, análisis de riesgos, planes de contingencia.</li>
+                    </ul>
+
+                    <h3>Vulnerabilidades y amenazas</h3>
+                    <ul>
+                        <li>Ingeniería social y Phishing.</li>
+                        <li>Malware: Ransomware, Troyanos, Virus, Gusanos.</li>
+                        <li>DoS/DDoS, Inyecciones SQL, XSS, Ataques Man-in-the-Middle.</li>
+                        <li>Tipos de atacantes: Hackers, Crackers, Sniffers, Lammer.</li>
+                    </ul>
+
+                    <h3>Legislación y Protección de Datos</h3>
+                    <ul>
+                        <li>RGPD (Reglamento General de Protección de Datos).</li>
+                        <li>LOPDGDD (Ley Orgánica de Protección de Datos y Garantía de Derechos Digitales).</li>
+                        <li>AEPD (Agencia Española de Protección de Datos).</li>
+                        <li>DPO (Delegado de Protección de Datos).</li>
+                        <li>Derechos ARCO: Acceso, Rectificación, Cancelación, Oposición.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Prácticas</h2>
+                    <h3>Práctica 1.1: Análisis de un ciberataque</h3>
+                    <p>Buscar una noticia reciente sobre un ciberataque y analizar: activos afectados, vulnerabilidad explotada, impacto y medidas preventivas.</p>
+
+                    <h3>Práctica 1.2: Informe de seguridad</h3>
+                    <p>Redactar un informe aplicando conceptos a un escenario real propuesto: infograma de elementos de SI, características de seguridad, herramientas utilizadas.</p>
+                </div>
+            </div>
+
+            <footer>
+                IES El Grao · Curso 2026-2027 · 0226 Seguridad Informática · SMR
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('sidebarNav').innerHTML = getSidebarHTML('index', 1);
+    </script>
+</body>
+</html>
