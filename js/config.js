@@ -109,7 +109,7 @@ function getUPTableHTML() {
 
 // --- Funciones para Sidebar ---
 
-function getSidebarHTMLRoot(paginaActual) {
+function getSidebarHTMLRoot(paginaActual, numUPActiva) {
     let html = '<a href="principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
     html += '<a href="evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
@@ -118,15 +118,24 @@ function getSidebarHTMLRoot(paginaActual) {
     
     for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
-            const active = paginaActual === 'up' + i ? ' class="active"' : '';
+            const isActive = i === numUPActiva;
+            const active = isActive ? ' class="active"' : '';
             html += '<a href="up/up' + i + '/index.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
+            
+            // Sub-páginas si esta UP está activa
+            if (isActive && UP_SUBPAGES[i]) {
+                for (const sub of UP_SUBPAGES[i]) {
+                    const subActive = paginaActual === sub.archivo.replace('.html', '') ? ' class="active sub-link"' : ' class="sub-link"';
+                    html += '<a href="up/up' + i + '/' + sub.archivo + '"' + subActive + '>' + sub.titulo + '</a>';
+                }
+            }
         }
     }
     
     return html;
 }
 
-function getSidebarHTML(paginaActual) {
+function getSidebarHTML(paginaActual, numUPActiva) {
     let html = '<a href="../principal.html"' + (paginaActual === 'principal' ? ' class="active"' : '') + '>Inicio</a>';
     
     html += '<a href="../evaluacion.html"' + (paginaActual === 'evaluacion' ? ' class="active"' : '') + '>Evaluación</a>';
@@ -135,8 +144,17 @@ function getSidebarHTML(paginaActual) {
     
     for (let i = 1; i <= 5; i++) {
         if (esUPActiva(i)) {
-            const active = paginaActual === 'up' + i ? ' class="active"' : '';
+            const isActive = i === numUPActiva;
+            const active = isActive ? ' class="active"' : '';
             html += '<a href="up' + i + '/index.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
+            
+            // Sub-páginas si esta UP está activa
+            if (isActive && UP_SUBPAGES[i]) {
+                for (const sub of UP_SUBPAGES[i]) {
+                    const subActive = paginaActual === sub.archivo.replace('.html', '') ? ' class="active sub-link"' : ' class="sub-link"';
+                    html += '<a href="' + sub.archivo + '"' + subActive + '>' + sub.titulo + '</a>';
+                }
+            }
         }
     }
     
