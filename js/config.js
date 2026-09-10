@@ -6,12 +6,12 @@
 const UPS_ACTIVAS = [];
 
 const UPS_INFO = {
-    1: { titulo: "Fundamentos de Seguridad y Seguridad Física", ra: "RA1" },
-    2: { titulo: "Almacenamiento y Copias de Seguridad", ra: "RA2" },
-    3: { titulo: "Seguridad Activa y Software Malicioso", ra: "RA3" },
-    4: { titulo: "Criptografía e Identificación Digital", ra: "RA4" },
-    5: { titulo: "Seguridad en Redes", ra: "RA4" },
-    6: { titulo: "Legislación y Protección de Datos", ra: "RA5" }
+    1: { titulo: "Fundamentos de Seguridad y Seguridad Física", ra: "RA1", eval: "1ª" },
+    2: { titulo: "Almacenamiento y Copias de Seguridad", ra: "RA2", eval: "1ª" },
+    3: { titulo: "Seguridad Activa y Software Malicioso", ra: "RA3", eval: "1ª" },
+    4: { titulo: "Criptografía e Identificación Digital", ra: "RA4", eval: "1ª" },
+    5: { titulo: "Seguridad en Redes", ra: "RA4", eval: "2ª" },
+    6: { titulo: "Legislación y Protección de Datos", ra: "RA5", eval: "2ª" }
 };
 
 const RAS_INFO = {
@@ -65,7 +65,11 @@ function getUPTableHTML() {
             ? '<a href="up/up' + i + '.html">' + info.titulo + '</a>' 
             : info.titulo;
         const ra = info.ra || '';
-        html += '<tr><td>' + estado + '</td><td>' + titulo + (ra ? '<br><small style="color:var(--accent);font-weight:600;">' + ra + '</small>' : '') + '</td></tr>';
+        const evalLabel = info.eval || '';
+        html += '<tr><td>' + estado + '</td><td>' + titulo;
+        if (ra) html += '<br><small style="color:var(--accent);font-weight:600;">' + ra + '</small>';
+        if (evalLabel) html += ' <small style="color:var(--text-light);">· ' + evalLabel + ' eval.</small>';
+        html += '</td></tr>';
     }
     return html;
 }
