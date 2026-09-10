@@ -66,11 +66,9 @@ function getUPTableHTML() {
             : info.titulo;
         const ra = info.ra || '';
         const evalLabel = info.eval || '';
-        html += '<tr><td>' + estado + '</td><td>' + titulo;
-        if (ra) html += '<br><small style="color:var(--accent);font-weight:600;">' + ra + '</small>';
-        if (evalLabel) html += ' <small style="color:var(--text-light);">· ' + evalLabel + ' eval.</small>';
-        html += '</td></tr>';
+        html += '<tr><td>' + estado + '</td><td>' + titulo + (ra ? '<br><small style="color:var(--accent);font-weight:600;">' + ra + '</small>' : '') + '</td><td>' + evalLabel + '</td></tr>';
     }
+    html += '<tr><td><span class="badge" style="background:#cbd5e0;">FIE</span></td><td>Formación en Empresa</td><td>3ª</td></tr>';
     return html;
 }
 
