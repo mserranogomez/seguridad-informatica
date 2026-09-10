@@ -146,13 +146,13 @@ function getSidebarHTML(paginaActual, numUPActiva) {
         if (esUPActiva(i)) {
             const isActive = i === numUPActiva;
             const active = isActive ? ' class="active"' : '';
-            html += '<a href="up' + i + '/index.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
+            html += '<a href="./index.html"' + active + '>UP' + i + ' ' + UPS_INFO[i].titulo + '</a>';
             
             // Sub-páginas si esta UP está activa
             if (isActive && UP_SUBPAGES[i]) {
                 for (const sub of UP_SUBPAGES[i]) {
                     const subActive = paginaActual === sub.archivo.replace('.html', '') ? ' class="active sub-link"' : ' class="sub-link"';
-                    html += '<a href="' + sub.archivo + '"' + subActive + '>' + sub.titulo + '</a>';
+                    html += '<a href="./' + sub.archivo + '"' + subActive + '>' + sub.titulo + '</a>';
                 }
             }
         }
